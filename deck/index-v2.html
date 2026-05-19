@@ -19,93 +19,114 @@
   <div class="reveal">
     <div class="slides">
 
+      <!-- 00. INTRO — who's talking -->
+      <section data-atmo="purple-deep" class="intro">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Who's talking · 20 min · Prompt Night n24</div>
+
+        <div class="intro-grid">
+          <div>
+            <img class="intro-photo" src="./assets/carlos.jpg" alt="Carlos Libardo" />
+            <div class="intro-logos">
+              <img src="./assets/shippit.svg" alt="Shippit" />
+              <span class="intro-logos-sep">×</span>
+              <img src="./assets/voltbras.svg" alt="Voltbras" />
+            </div>
+          </div>
+
+          <div>
+            <h1 class="intro-name">Carlos Libardo<span class="pt">.</span></h1>
+            <p class="intro-title">AI engineer · founder</p>
+
+            <ul class="intro-roles">
+              <li>
+                <strong>Voltbras · founder &amp; CTO · 2018</strong>
+                <span>LatAm's first EV charging platform. 7 countries. 15M BRL raised. Led 15+ engineers.</span>
+              </li>
+              <li>
+                <strong>Shippit · founder · today</strong>
+                <span>AI-native consultancy. Production agent systems.</span>
+              </li>
+              <li>
+                <strong>Gallium · founding AI engineer</strong>
+                <span>Multi-agent brain behind on-brand content generation. Automated quality scoring.</span>
+              </li>
+              <li>
+                <strong>Way2 Technology · AI consultant</strong>
+                <span>Agent orchestration inside one of Brazil's largest energy-sector platforms.</span>
+              </li>
+            </ul>
+
+            <p class="intro-stack">Agent orchestration · RAG · LLM-as-judge · Durable workflows · DDD · Clean Architecture · TDD</p>
+          </div>
+        </div>
+
+        <div class="intro-tonight">
+          <span class="intro-tonight-label">Tonight</span>
+          <span class="intro-tonight-stops">SDD<span class="sep">→</span>TDD<span class="sep">→</span>Skills<span class="sep">→</span>Multi-agent orchestration<span class="sep">→</span>Live bake-off</span>
+        </div>
+      </section>
+
       <!-- 01. COLD OPEN — single line, no spoiler subhead -->
       <section data-atmo="purple-deep" class="center">
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Prompt Night n24 · Founder Haus · Floripa</div>
         <h1 style="font-size:5.4em;line-height:0.92;max-width:18ch;">My phone shipped a smart contract <em>while I was asleep.<span class="pt">.</span></em></h1>
-        <p class="lead" style="margin-top:1.2em;color:var(--muted-2);max-width:30ch;font-size:1.05em;">Base mainnet. 04:17 BRT. Receipt on slide 9.</p>
+        <p class="lead" style="margin-top:1.2em;color:var(--muted-2);max-width:30ch;font-size:1.05em;">Base mainnet. 04:17 BRT. Receipt in eight minutes.</p>
       </section>
 
       <!-- 02. TITLE — promise of the talk -->
       <section data-atmo="purple-deep" class="title">
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Multi-agent workflows · any platform</div>
-        <h1>Stop typing fast.<br><em>Start orchestrating.<span class="pt">.</span></em></h1>
-        <p class="lead" style="margin-top:1.2em;font-size:1.15em;max-width:24ch;">You're <em>one&nbsp;prompt</em> away from whatever you want to build.</p>
+        <h1>One prompt in.<br><em>A team of agents out.<span class="pt">.</span></em></h1>
+        <p class="lead" style="margin-top:1.2em;font-size:1.15em;max-width:26ch;">You stopped typing code. <em>Stop typing prompts next.</em></p>
         <p class="muted" style="margin-top:1.1em;font-size:0.95em;">Carlos Libardo &nbsp;·&nbsp; Shippit &nbsp;·&nbsp; 20 minutes &nbsp;·&nbsp; whatever CLI you brought.</p>
       </section>
 
       <!-- 03. SDD — live 3-way bake-off on playground analytics -->
       <section data-atmo="blue-navy">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Live bake-off · OutreachAI analytics</div>
-        <h3>Same feature. <em>Three prompts.<span class="pt">.</span></em></h3>
-        <p class="muted" style="font-size:0.76em;margin-top:0.2em;max-width:50em;">Feature: reply-rate by hour of day on campaign analytics. Three worktrees, same model, same 25-min cap. Branches: <code>bake/vibe</code>, <code>bake/plan</code>, <code>bake/sdd</code>.</p>
-        <div class="cols-3" style="margin-top:0.7em;align-items:stretch;">
+        <div class="eyebrow"><span class="dot"></span>SDD · 01 &nbsp;·&nbsp; live bake-off vs the rest</div>
+        <h3>The spec <em>is the guardrail.<span class="pt">.</span></em></h3>
+        <p class="muted" style="font-size:0.76em;margin-top:0.2em;max-width:58em;"><strong>SDD</strong> — spec-driven development: write the contract first. What it does, inputs, outputs, acceptance criteria. <strong>TDD</strong> — failing test second, encoding that contract as an executable check. AI writes the code; spec and test keep it honest. <strong>Why it matters with AI:</strong> models fill ambiguity with confident guesses and ship bugs in the same tone as working code — the spec removes the ambiguity, the failing test is the objective gate. Same prompt, three modes, three worktrees.</p>
+
+        <div style="margin:0.7em auto 0.6em;max-width:38em;text-align:center;">
+          <p class="muted" style="font-size:0.62em;text-transform:uppercase;letter-spacing:0.14em;margin:0 0 0.3em;">→ The prompt (identical for all three)</p>
+<pre style="margin:0;font-size:0.78em;display:inline-block;text-align:left;"><code class="language-text">add reply-rate by hour of day to campaign analytics</code></pre>
+        </div>
+
+        <div class="cols-3" style="margin-top:0.6em;align-items:stretch;">
 
           <div class="card" style="border-left:2px solid var(--danger);">
-            <h4 style="color:var(--danger);margin-bottom:0.2em;">Vibe prompt</h4>
-            <p class="muted" style="font-size:0.62em;text-transform:uppercase;letter-spacing:0.14em;margin:0.4em 0 0.2em;">→ Prompt</p>
-<pre style="margin:0.2em 0;font-size:0.72em;"><code class="language-text">add a chart showing reply
-rate by hour of day to the
-campaign analytics page</code></pre>
-            <p class="muted" style="font-size:0.62em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">→ What shipped</p>
-<pre style="margin:0.2em 0;font-size:0.66em;"><code class="language-typescript">// sent bucket: send-hour
-sentByHour[new Date(row
-  ._creationTime).getHours()]++;
-// replied bucket: REPLY-hour
-repliedByHour[new Date(row
-  .lastReplyAt).getHours()]++;</code></pre>
-            <p style="font-size:0.7em;margin:0.5em 0 0.2em;"><strong>134 lines</strong> · <strong>0 tests</strong> · <strong>18 min</strong></p>
-            <p class="muted" style="font-size:0.7em;margin-top:0.5em;border-top:1px solid var(--border);padding-top:0.5em;"><strong style="color:var(--danger);">Tradeoff:</strong> fastest to <em>something</em>. Slowest to <em>correct</em>. Numerator and denominator measure different events — metric is meaningless. No test catches it. No reviewer catches it. Ship Monday, dies on Wednesday.</p>
+            <h4 style="color:var(--danger);margin-bottom:0.1em;">Execute mode</h4>
+            <p class="muted" style="font-size:0.7em;margin:0 0 0.5em;">Agent codes immediately. No plan, no spec.</p>
+            <p style="font-size:0.78em;margin:0.4em 0 0.2em;"><strong>What you get</strong></p>
+            <p style="font-size:0.74em;margin:0;">A chart on the page. Looks right. Metric is silently wrong — numerator and denominator count different events.</p>
+            <p style="font-size:0.7em;margin:0.6em 0 0.2em;"><strong>134 lines</strong> · <strong>0 tests</strong> · <strong>18 min</strong></p>
+            <p class="muted" style="font-size:0.72em;margin-top:0.5em;border-top:1px solid var(--border);padding-top:0.5em;"><strong style="color:var(--danger);">Gain:</strong> fastest to <em>something</em> on screen.<br><strong style="color:var(--danger);">Cost:</strong> slowest to <em>correct</em>. No test catches the bug. No reviewer catches it. Ships Monday, dies Wednesday.</p>
           </div>
 
           <div class="card" style="border-left:2px solid var(--warning);">
-            <h4 style="color:var(--warning);margin-bottom:0.2em;">Plan prompt</h4>
-            <p class="muted" style="font-size:0.62em;text-transform:uppercase;letter-spacing:0.14em;margin:0.4em 0 0.2em;">→ Prompt</p>
-<pre style="margin:0.2em 0;font-size:0.72em;"><code class="language-text">add reply-rate by hour-of-day.
-plan first:
-1. read analytics.ts patterns
-2. add convex query
-3. tz fallback: lead→acct→UTC
-4. chart UI on analytics page
-5. integration test</code></pre>
-            <p class="muted" style="font-size:0.62em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">→ What shipped</p>
-<pre style="margin:0.2em 0;font-size:0.66em;"><code class="language-typescript">const tz = leadTz.get(key)
-  ?? orgTz ?? "UTC";
-const h = getHourInTz(
-  row._creationTime, tz);
-sent[h]++;
-if (REPLY_STATES.has(state))
-  replied[h]++;</code></pre>
-            <p style="font-size:0.7em;margin:0.5em 0 0.2em;"><strong>426 lines</strong> · <strong>2 tests</strong> · <strong>6 min</strong></p>
-            <p class="muted" style="font-size:0.7em;margin-top:0.5em;border-top:1px solid var(--border);padding-top:0.5em;"><strong style="color:var(--warning);">Tradeoff:</strong> right semantic, right TZ chain, atomic commits. But the plan is in <em>your head</em>, not on disk. Edge cases you didn't name (deleted leads, invalid IANA strings) silently fall back to UTC.</p>
+            <h4 style="color:var(--warning);margin-bottom:0.1em;">Plan mode</h4>
+            <p class="muted" style="font-size:0.7em;margin:0 0 0.5em;">Agent proposes a plan in chat. You approve, then it codes.</p>
+            <p style="font-size:0.78em;margin:0.4em 0 0.2em;"><strong>What you get</strong></p>
+            <p style="font-size:0.74em;margin:0;">Happy path is correct. Timezone chain handled. Edge cases you didn't think to name fall back to defaults — and you'll never know.</p>
+            <p style="font-size:0.7em;margin:0.6em 0 0.2em;"><strong>426 lines</strong> · <strong>2 tests</strong> · <strong>6 min</strong></p>
+            <p class="muted" style="font-size:0.72em;margin-top:0.5em;border-top:1px solid var(--border);padding-top:0.5em;"><strong style="color:var(--warning);">Gain:</strong> right thinking, right shape, atomic commits.<br><strong style="color:var(--warning);">Cost:</strong> the plan lives in <em>your head</em>, not on disk. The next agent (or future you) starts from zero.</p>
           </div>
 
           <div class="card glow" style="border-left:2px solid var(--accent);">
-            <h4 style="color:var(--accent);margin-bottom:0.2em;">SDD framework</h4>
-            <p class="muted" style="font-size:0.62em;text-transform:uppercase;letter-spacing:0.14em;margin:0.4em 0 0.2em;">→ Prompt</p>
-<pre style="margin:0.2em 0;font-size:0.72em;"><code class="language-text">/superpowers:brainstorm
-"reply-rate by hour-of-day"
-→ spec.md (14 FR, 12 AC)
-→ plan.md (T1..T4)
-→ failing tests RED first
-→ implement → all GREEN</code></pre>
-            <p class="muted" style="font-size:0.62em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">→ What shipped</p>
-<pre style="margin:0.2em 0;font-size:0.66em;"><code class="language-typescript">// spec.md, edge-cases §1:
-// "Reply hour is the SEND
-//  hour, not the reply hour."
-// US3.3: deleted-lead case
-//   → fall through to acct TZ
-// US5.1: SP historical DST
-//   → Intl.DateTimeFormat</code></pre>
-            <p style="font-size:0.7em;margin:0.5em 0 0.2em;"><strong>779 lines</strong> · <strong>10 tests</strong> · <strong>8 min</strong></p>
-            <p class="muted" style="font-size:0.7em;margin-top:0.5em;border-top:1px solid var(--border);padding-top:0.5em;"><strong style="color:var(--accent);">Tradeoff:</strong> 6× the artifact, but spec caught the vibe bug <em>in plain English</em> before any code ran. AC IDs in every commit → next agent (or human, in 6 months) reads it like a contract. Heavy if you're throwing it away.</p>
+            <h4 style="color:var(--accent);margin-bottom:0.1em;">SDD + superpowers</h4>
+            <p class="muted" style="font-size:0.7em;margin:0 0 0.5em;">Brainstorm → spec → plan → failing tests → green. On disk.</p>
+            <p style="font-size:0.78em;margin:0.4em 0 0.2em;"><strong>What you get</strong></p>
+            <p style="font-size:0.74em;margin:0;">A spec that names the bug from card 1 — in plain English — before any code runs. Edge cases enumerated. Commits link back to acceptance criteria.</p>
+            <p style="font-size:0.7em;margin:0.6em 0 0.2em;"><strong>779 lines</strong> · <strong>10 tests</strong> · <strong>8 min</strong></p>
+            <p class="muted" style="font-size:0.72em;margin-top:0.5em;border-top:1px solid var(--border);padding-top:0.5em;"><strong style="color:var(--accent);">Gain:</strong> a durable contract the next agent or human can ship against in 6 months.<br><strong style="color:var(--accent);">Cost:</strong> 6× the artifact. Overkill if you're throwing it away.</p>
           </div>
 
         </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:54em;"><strong>The surprise:</strong> SDD ran <strong>faster than vibe</strong> (8 min vs 18). Discipline isn't slower — vibe pays its tax mid-flight, in debug loops. <strong>When to use which:</strong> vibe for throwaway spikes. Plan when you'll keep it but only one of you owns it. SDD when a second human (or agent) ships against it.</p>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:58em;"><strong>The surprise:</strong> SDD ran <strong>faster than execute</strong> (8 min vs 18). Discipline isn't slower — execute pays its tax mid-flight, in debug loops. <strong>AI builds the code; we build the guardrails</strong> — spec, failing test, skill. The frameworks you'll see in a few slides (Superpowers, GSD, OpenSpec, Spec Kit) are four dialects of the same idea.</p>
       </section>
 
       <!-- 04. TDD — receipt -->
@@ -195,7 +216,7 @@ description: Use this before any creative work —
       <!-- 07. SUBAGENTS vs AGENT TEAMS — Claude Code primitives -->
       <section data-atmo="teal-dark">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Two ways to parallelize</div>
+        <div class="eyebrow"><span class="dot"></span>Orchestration · 04a &nbsp;·&nbsp; two ways to parallelize</div>
         <h3>Subagents.<br><em>Or agent teams.<span class="pt">.</span></em></h3>
         <div class="cols" style="margin-top:0.4em;">
           <div class="card glow">
@@ -215,14 +236,52 @@ $ export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 $ claude
 > Create a team of 3 reviewers for PR #142: security,
   performance, test coverage. Have them debate findings.</code></pre>
-        <p class="muted" style="font-size:0.78em;margin-top:0.6em;max-width:38em;">Subagents = MapReduce. Agent Teams = a small crew that argues. Same physics. Different tokens.</p>
+        <p class="muted" style="font-size:0.78em;margin-top:0.6em;max-width:42em;">Subagents = MapReduce. Agent Teams = a small crew that argues. Same physics, different tokens. Docs: <a href="https://code.claude.com/docs/en/agent-teams"><code>code.claude.com/docs/en/agent-teams</code></a>.</p>
+      </section>
+
+      <!-- 07b. WORKTREE — the filesystem problem -->
+      <section data-atmo="teal-dark">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Orchestration · 04a.5 &nbsp;·&nbsp; the filesystem problem</div>
+        <h3>One repo.<br><em>Three agents. Boom.<span class="pt">.</span></em></h3>
+        <div class="dag" style="margin:0.8em auto 0.4em;max-width:42em;">agent-a    agent-b    agent-c
+   │          │          │
+   └──────────┼──────────┘
+              ▼
+      ┌──────────────┐
+      │  one repo    │
+      │  one branch  │
+      │  one index   │
+      └──────────────┘
+              │
+              ▼
+   package.json conflict
+   dirty index · branch thrash
+              💥</div>
+        <p class="muted" style="font-size:0.78em;text-align:center;max-width:38em;margin:0.4em auto 0.6em;">Same physics as threads sharing memory. Need isolation.</p>
+        <div class="dag" style="margin:0.2em auto 0.6em;max-width:42em;">agent-a    agent-b    agent-c
+   │          │          │
+   ▼          ▼          ▼
+┌────────┐ ┌────────┐ ┌────────┐
+│worktree│ │worktree│ │worktree│
+│   a    │ │   b    │ │   c    │
+└────┬───┘ └────┬───┘ └────┬───┘
+     └──────────┼──────────┘
+                ▼
+         ┌──────────┐
+         │  .git    │  one history
+         └──────────┘</div>
+<pre><code class="language-bash">git worktree add ../agent-a feature/sdd-mode
+git worktree add ../agent-b feature/tdd-mode
+git worktree add ../agent-c feature/yolo-mode</code></pre>
+        <p class="muted" style="font-size:0.78em;margin-top:0.6em;max-width:42em;">Same repo, N filesystems. Merge later, in one place. No worktree, no parallel.</p>
       </section>
 
       <!-- 08. OPERATING CRAFT — dials -->
       <section data-atmo="slate-steel">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>The dials · 04</div>
-        <h3>Four dials.<br><em>Or your $40 becomes $400.<span class="pt">.</span></em></h3>
+        <div class="eyebrow"><span class="dot"></span>The dials · 04b &nbsp;·&nbsp; cost as a knob</div>
+        <h3>Three dials.<br><em>Or your $40 becomes $400.<span class="pt">.</span></em></h3>
         <div class="cols-3" style="margin-top:0.4em;">
           <div class="card glow">
             <h4>Model split</h4>
@@ -240,112 +299,78 @@ $ claude
         <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:38em;">Cost is a knob, not a verdict. Tune the split, isolate the checkouts, compress the chatter — same output, fraction of the spend.</p>
       </section>
 
-      <!-- 09. VLAD — phone in pocket -->
+      <!-- 09. VLAD-COCKPIT — why I'm building it (WIP) -->
       <section data-atmo="purple-deep">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 01</div>
-        <h3>Phone in pocket.<br><em>Agents in the cloud.<span class="pt">.</span></em></h3>
-        <div class="cols" style="margin-top:0.6em;">
+        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 01 &nbsp;·&nbsp; <span style="color:var(--brand-purple);">work in progress</span></div>
+        <h3>Remove me as the<br><em>bottleneck.<span class="pt">.</span></em></h3>
+        <div class="cols" style="margin-top:0.6em;align-items:flex-start;">
           <div>
-            <p style="font-size:0.92em;max-width:24em;">vlad provisions a GCP VM and turns it into a mobile-first Claude Code rig. mosh keeps the connection alive across wifi swaps. tmux pins every session. Tailscale hides the VM behind a mesh.</p>
-            <p class="muted" style="font-size:0.78em;margin-top:0.6em;max-width:22em;">30-50ms latency. 100MB RAM per Claude instance. Survives airplane mode, subway tunnels, screen lock.</p>
-            <div style="margin-top:1em;">
-              <span class="pill">mosh</span><span class="pill">tmux</span><span class="pill">tailscale</span><span class="pill">ntfy</span>
-            </div>
+            <p style="font-size:0.98em;max-width:24em;">One person can only sit in front of one Claude Code session at a time. That's the ceiling.</p>
+            <p style="font-size:0.92em;margin-top:0.8em;max-width:24em;"><strong>vlad-cockpit</strong> is the orchestration layer I'm building on top of Claude Code — so many agents can work in parallel, in different repos, while I review instead of type.</p>
+            <p class="muted" style="font-size:0.78em;margin-top:0.8em;max-width:24em;">Still early. Rough edges everywhere. Sharing the direction, not the polish.</p>
           </div>
-          <div class="dag sm">Phone (Termux)
-   │
-   │  mosh + Tailscale
-   ▼
-┌──────────────────┐
-│   GCP VM         │
-│   Ubuntu 24.04   │
-│   ┌────────────┐ │
-│   │   tmux     │ │
-│   │  claude×N  │ │
-│   └────────────┘ │
-└──────────────────┘
-       │
-       ▼  ntfy push
-   Phone wakes up</div>
+          <div class="card glow" style="max-width:22em;">
+            <h4>The shift</h4>
+            <ul style="font-size:0.82em;line-height:1.55;margin:0.4em 0 0;padding-left:1.1em;">
+              <li><strong>From:</strong> me typing prompts, one at a time</li>
+              <li><strong>To:</strong> me reviewing work from a fleet of agents</li>
+              <li><strong>Trigger:</strong> a schedule, a GitHub issue, a webhook — not me</li>
+              <li><strong>I unblock</strong> when something needs judgment. The rest runs.</li>
+            </ul>
+          </div>
         </div>
-        <p class="muted" style="font-family:var(--font-mono);font-size:0.55em;text-transform:uppercase;letter-spacing:0.18em;margin-top:1em;">github.com/carloslibadoo/vlad</p>
       </section>
 
-      <!-- 10. VLAD-COCKPIT A — cockpit -->
+      <!-- 10. VLAD-COCKPIT — what it gives you today (non-tech wins) -->
       <section data-atmo="purple-deep">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 02</div>
-        <h3>One cockpit.<br><em>Every session, in flight.<span class="pt">.</span></em></h3>
+        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 02 &nbsp;·&nbsp; <span style="color:var(--brand-purple);">what it gives you today</span></div>
+        <h3>Four wins, even <em>half-built.<span class="pt">.</span></em></h3>
         <div class="cols-3" style="margin-top:0.4em;">
           <div class="card glow">
-            <h4>Live state</h4>
-            <p>Cards per session. JSONL watcher tails <code>~/.claude/projects</code>. Transcript, tmux mirror, git diff — all real-time over WebSocket.</p>
+            <h4>One screen, every agent</h4>
+            <p>Every session in flight, on one page. Status, what it's working on, when it last moved. No tab-juggling, no "where did that one go".</p>
           </div>
           <div class="card glow">
-            <h4>Take control</h4>
-            <p>Tap → terminal → toggle "Take control" → send-keys into tmux. Read-only by default. Deep-link tokens expire in 15 min.</p>
+            <h4>Cost X-ray</h4>
+            <p>Spend per project, per model, per session. Find the leak before it bleeds. Decide which agents earn their keep.</p>
           </div>
           <div class="card glow">
-            <h4>One URL</h4>
-            <p>Tailscale Funnel exposes <code>127.0.0.1:3000</code> as a single HTTPS endpoint. Phone, laptop, tablet — same cockpit.</p>
+            <h4>Scheduled agents</h4>
+            <p>"Audit dependencies every Monday at 7am." Set it, walk away. Work happens whether I'm at the keyboard or not.</p>
           </div>
         </div>
-        <p class="muted" style="font-size:0.78em;margin-top:1em;max-width:36em;">SQLite state. HMAC-signed deep links. GitHub OAuth + login allow-list. M4 ships. v2 adds cron, webhooks, repo registry.</p>
+        <div class="card glow" style="margin-top:0.9em;max-width:38em;">
+          <h4>Phone-first access</h4>
+          <p style="font-size:0.86em;">Same cockpit on phone, laptop, tablet. Approve, take over, or walk away — from anywhere. Push notifications when an agent needs a human.</p>
+        </div>
+        <p class="muted" style="font-family:var(--font-mono);font-size:0.55em;text-transform:uppercase;letter-spacing:0.18em;margin-top:1em;">github.com/carloslibardo/vlad</p>
       </section>
 
-      <!-- 11. VLAD-COCKPIT B — autonomous swarm (climax) -->
+      <!-- 11. VLAD-COCKPIT — product showcase (live screens) -->
       <section data-atmo="purple-deep">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 03 &nbsp;·&nbsp; <span style="color:var(--brand-purple);">the payoff</span></div>
-        <h3>Cron and webhooks<br>turn it <em>autonomous.<span class="pt">.</span></em></h3>
-        <div class="dag" style="margin-top:0.4em;font-size:0.62em;">┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   GitHub    │    │    cron     │    │   manual    │
-│  webhook    │    │  scheduler  │    │     CLI     │
-└──────┬──────┘    └──────┬──────┘    └──────┬──────┘
-       └──────────────────┼──────────────────┘
-                          ▼
-                ┌───────────────────┐
-                │  vlad-cockpit     │  ← daemon (bun)
-                │  spawn · watch ·  │
-                │  expose · notify  │
-                └─────────┬─────────┘
-            ┌─────────────┼─────────────┐
-            ▼             ▼             ▼
-       ┌────────┐    ┌────────┐    ┌────────┐
-       │claude 1│    │claude 2│    │claude N│
-       │worktree│    │worktree│    │worktree│
-       └────────┘    └────────┘    └────────┘
-                          │
-                          ▼
-              Tailscale Funnel · :3000
-              phone · laptop · tablet</div>
-        <p style="font-size:0.92em;margin-top:1em;max-width:38em;">Label an issue <code>bug</code>. A session spawns. ntfy fires. I tap the deep link. Review or take over. <strong>The 04:17 webhook from slide 1 fired right here.</strong></p>
-      </section>
-
-      <!-- 12. VLAD-COCKPIT C — product showcase (live screens) -->
-      <section data-atmo="purple-deep">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>vlad-cockpit · live screens · claude-code.tailfdab3c.ts.net</div>
-        <h3 style="font-size:1.6em;">What the <em>cockpit shows.<span class="pt">.</span></em></h3>
+        <div class="eyebrow"><span class="dot"></span>vlad-cockpit · live · still WIP</div>
+        <h3 style="font-size:1.6em;">A dozen agents. <em>One pane of glass.<span class="pt">.</span></em></h3>
         <div class="cols-3" style="margin-top:0.5em;align-items:flex-start;gap:1em;">
           <div>
             <img src="assets/thumbs/cockpit_01_sessions.png" alt="vlad-cockpit live sessions" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Sessions · live</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;">12 live agents on opus-4-7. Each card: status, last activity, % context burned, $ spent. Click → terminal + diff.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> One screen, every agent across the fleet. No tab-juggling. Triage in 5 seconds, not 5 minutes.</p>
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Every agent at a glance</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;">A dozen agents working in parallel — across different projects. One card each: what it's doing, how long it's been at it, how much it's spent.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">Triage takes 5 seconds, not 5 minutes. Tap a card to drop in.</p>
           </div>
           <div>
             <img src="assets/thumbs/cockpit_02_costs.png" alt="vlad-cockpit cost breakdown" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Costs · last 7 days</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;">$33,822 notional, broken down by repo / model / source / session / day. way2 $22k · playground $9k · ipe $45.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> Spend is now per-repo, per-model — kill the leaky session before it eats the budget.</p>
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Where the money went</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;">Spend broken down by project, model, and session — over the last 7 days. The big consumer, the cheap experiment, the runaway.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">No more "I think it cost about…". You see it. You decide.</p>
           </div>
           <div>
             <img src="assets/thumbs/cockpit_03_cron.png" alt="vlad-cockpit cron scheduler" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Cron · scheduled sessions</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;">5-field cron + repo + budget + prompt. Hourly · every 4h · daily 09:00 UTC · weekdays · weekly. Agents that run themselves.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> Recurring agent work without remembering to fire it. "Audit deps every Monday 7am" is one form.</p>
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Agents that fire themselves</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;">Pick a project, a budget, a prompt, and a cadence — hourly, daily, weekly. The agent runs without me remembering to start it.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">Recurring work stops depending on my memory.</p>
           </div>
         </div>
       </section>
@@ -369,7 +394,54 @@ $ claude
         <p class="muted" style="font-size:0.82em;margin-top:0.6em;max-width:28em;">Type-checks lie. Unit tests lie. On-chain assertions don't.</p>
       </section>
 
-      <!-- 14. IPE-CITY BAKE-OFF -->
+      <!-- 14. FRAMEWORKS + PORTABILITY (moved here to set up the ipe-city bake-off) -->
+      <section data-atmo="slate-steel">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Pick the dialect &nbsp;·&nbsp; four guardrail frameworks</div>
+        <h3>Four frameworks.<br><em>One physics.<span class="pt">.</span></em></h3>
+        <table style="margin-top:0.4em;">
+          <thead>
+            <tr><th>Framework</th><th>Philosophy</th><th>Killer move</th><th>Reach when</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Superpowers</strong></td>
+              <td>Brainstorm-first. TDD-disciplined.</td>
+              <td>Skill catalog + design gates</td>
+              <td>Process before code.</td>
+            </tr>
+            <tr>
+              <td><strong>GSD</strong></td>
+              <td>Milestone-driven. Phase-gated.</td>
+              <td>Wave-based parallel execution</td>
+              <td>Shipped artifacts on schedule.</td>
+            </tr>
+            <tr>
+              <td><strong>OpenSpec</strong></td>
+              <td>Spec-as-contract.</td>
+              <td>Diff on the spec, not the code</td>
+              <td>Multi-team, one source of truth.</td>
+            </tr>
+            <tr>
+              <td><strong>Spec Kit</strong></td>
+              <td>Specification-first. GitHub-native.</td>
+              <td>specify → plan → tasks → implement</td>
+              <td>Your repo is your PM.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-top:1em;">
+          <span class="pill solid">Claude Code</span>
+          <span class="pill">Codex</span>
+          <span class="pill">Cursor</span>
+          <span class="pill">Windsurf</span>
+          <span class="pill">OpenCode</span>
+          <span class="pill">Gemini CLI</span>
+        </div>
+        <p class="muted" style="font-size:0.78em;margin-top:0.8em;max-width:38em;">Skills are markdown. Specs are markdown. Plans are markdown. The CLI doesn't matter — the patterns travel. Now watch three of these four ship the same product.</p>
+      </section>
+
+      <!-- 15. IPE-CITY BAKE-OFF -->
       <section data-atmo="blue-navy">
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Receipt · ipe-city</div>
@@ -436,19 +508,19 @@ $ claude
             <img src="assets/thumbs/ipe_01_home.png" alt="ipe-city home — Submit, View, Operator" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
             <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Home · three doors</p>
             <p style="font-size:0.72em;line-height:1.4;margin:0;"><strong>Submit Proposal</strong> · <strong>View Proposals</strong> · <strong>Operator Dashboard</strong>. Same UI shape across all 3 framework branches — proves the spec held.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> The product is the spec. Same routes, same affordances, three independent implementations.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">The product is the spec. Same routes, same affordances, three independent implementations.</p>
           </div>
           <div>
-            <img src="assets/thumbs/ipe_02_evaluation.png" alt="ipe-city evaluation — Evaluation Submitted, awaiting on-chain confirmation across 4 dimensions" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Evaluation · awaiting chain finality</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;"><strong>Evaluation Submitted.</strong> AI judges scored 4 dimensions. Each card: <em>Awaiting on-chain confirmation</em>. Scores publish to EvaluationRegistry on Base; UI only shows them after the tx confirms.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> The canonical merge waits for chain finality. Bake-off branches cut that corner and look "faster" — but the audit trail lives here, not in their UI.</p>
+            <img src="assets/thumbs/ipe_02_evaluation.png" alt="ipe-city evaluation — real AI scores across 4 dimensions plus confirmed Base Sepolia tx hash" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Evaluation · real scores · real tx</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;"><strong>Evaluation Confirmed.</strong> AI judges score 4 dimensions; aggregate publishes to EvaluationRegistry on Base Sepolia; tx hash on the card clicks straight through to Basescan.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">No screenshots of dashboards — actual transactions on a public chain. Open the explorer mid-demo if anyone doubts.</p>
           </div>
           <div>
             <img src="assets/thumbs/ipe_03_dashboard.png" alt="ipe-city operator dashboard — Operational, Base Sepolia, 6 contracts deployed" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
             <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Operator dashboard · on-chain</p>
             <p style="font-size:0.72em;line-height:1.4;margin:0;">System: <strong style="color:var(--success);">Operational</strong>. Network: <strong>Base Sepolia</strong>. <strong>6 contracts deployed</strong> · view on Basescan. Submit test proposal · health check.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> 6 Solidity contracts at known addresses — identical bytecode on mainnet and Sepolia via CREATE2. Click → Basescan → done.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">6 Solidity contracts at known addresses — identical bytecode on mainnet and Sepolia via CREATE2. Click → Basescan → done.</p>
           </div>
         </div>
       </section>
@@ -481,71 +553,24 @@ $ claude
         <h3 style="font-size:1.6em;">Every teammate, their <em>own&nbsp;agent.<span class="pt">.</span></em></h3>
         <div class="cols-3" style="margin-top:0.5em;align-items:flex-start;gap:1em;">
           <div>
-            <img src="assets/thumbs/outreach_01_dashboard.png" alt="OutreachAI dashboard — deliveries, active campaigns, safety status" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Dashboard · daily ops</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;"><strong>16 deliveries today</strong>. 9 active campaigns. Safety: Healthy. Next-24h queue: 10 WhatsApp sends ready, scheduled to lead-local working hours.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> One glance: is today on rails? Throughput, safety, what's about to fire — no spreadsheet, no dashboard hell.</p>
+            <img src="assets/thumbs/outreach_01_channels.png" alt="OutreachAI channels — Instagram, LinkedIn, Email, WhatsApp, X, Reddit with health and daily cap" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Channels · health + caps</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;"><strong>6 channels, one cockpit</strong>. Instagram, LinkedIn, Email, WhatsApp, X, Reddit. Per-account daily cap, warmup curve, healthy / near-cap / issues at a glance.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">Each provider (Unipile, Voyager, Gmail, X OAuth) abstracted away. The rep sees one safety surface, not six dashboards.</p>
           </div>
           <div>
-            <img src="assets/thumbs/outreach_02_campaigns.png" alt="OutreachAI campaigns list across strategies and statuses" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Campaigns · 12 active</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;">Active · paused · draft · completed. Each campaign = a strategy (ICP × agent × sequence × channel mix) replayed against a lead list. Filter by status, channel, owner.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> Run 12 outreach plays in parallel. Each one isolated, each one auditable, each one paused mid-flight without breaking the others.</p>
+            <img src="assets/thumbs/outreach_02_campaigns.png" alt="OutreachAI campaign detail — sequence progress, safety ramp, warmup day" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Campaign · sequence + ramp</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;"><strong>AI Advisory for CTO Leaders</strong>. 46 of 1070 leads through the sequence. Safety ramp, warmup day 14, daily limit curve — every send auditable.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">A campaign = strategy (ICP × agent × sequence × channel) replayed against a lead list. Pausable mid-flight without breaking the others.</p>
           </div>
           <div>
             <img src="assets/thumbs/outreach_03_agents.png" alt="OutreachAI agents — voice, playbooks, published versions per teammate" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
             <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Agents · voice + playbooks</p>
             <p style="font-size:0.72em;line-height:1.4;margin:0;"><strong>Carlos — Founder Pitch</strong>. <strong>Gabriel — Shippit Discovery</strong>. <strong>Bruno — AI Consultancy CTO</strong>. Each teammate has a versioned agent: voice, facts, playbook.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;"><strong>Value:</strong> The agent doesn't replace the rep — it <em>is</em> the rep, in delegated form. Voice survives. Authenticity isn't lost in templating.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">The agent doesn't replace the rep — it <em>is</em> the rep, in delegated form. Voice survives. Authenticity isn't lost in templating.</p>
           </div>
         </div>
-      </section>
-
-      <!-- 19. FRAMEWORKS + PORTABILITY -->
-      <section data-atmo="slate-steel">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Pick the dialect</div>
-        <h3>Four frameworks.<br><em>One physics.<span class="pt">.</span></em></h3>
-        <table style="margin-top:0.4em;">
-          <thead>
-            <tr><th>Framework</th><th>Philosophy</th><th>Killer move</th><th>Reach when</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Superpowers</strong></td>
-              <td>Brainstorm-first. TDD-disciplined.</td>
-              <td>Skill catalog + design gates</td>
-              <td>Process before code.</td>
-            </tr>
-            <tr>
-              <td><strong>GSD</strong></td>
-              <td>Milestone-driven. Phase-gated.</td>
-              <td>Wave-based parallel execution</td>
-              <td>Shipped artifacts on schedule.</td>
-            </tr>
-            <tr>
-              <td><strong>OpenSpec</strong></td>
-              <td>Spec-as-contract.</td>
-              <td>Diff on the spec, not the code</td>
-              <td>Multi-team, one source of truth.</td>
-            </tr>
-            <tr>
-              <td><strong>Spec Kit</strong></td>
-              <td>Specification-first. GitHub-native.</td>
-              <td>specify → plan → tasks → implement</td>
-              <td>Your repo is your PM.</td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="margin-top:1em;">
-          <span class="pill solid">Claude Code</span>
-          <span class="pill">Codex</span>
-          <span class="pill">Cursor</span>
-          <span class="pill">Windsurf</span>
-          <span class="pill">OpenCode</span>
-          <span class="pill">Gemini CLI</span>
-        </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.8em;max-width:34em;">Skills are markdown. Specs are markdown. Plans are markdown. The CLI doesn't matter — the patterns travel.</p>
       </section>
 
       <!-- 20. GSP × CLAUDE DS — brand-as-code -->
@@ -574,31 +599,6 @@ $ claude
           </div>
         </div>
         <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:38em;">Specs ship code. The same loop ships design. Both treat identity as versioned tokens — one paints them, one prescribes them.</p>
-      </section>
-
-      <!-- 21. SIMPLY SHIPPIT — coming soon -->
-      <section data-atmo="purple-deep">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Coming soon · simply shippit</div>
-        <h3>THINK &middot; BUILD &middot; CHECK &middot; SHIP.<br><em>GitHub is the contract.<span class="pt">.</span></em></h3>
-        <div class="cols">
-          <div>
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.62em;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:0.6em;">What the other SDD frameworks don't solve</p>
-            <ul style="font-size:0.86em;line-height:1.45;">
-              <li><strong>Team coordination.</strong> Most SDD assumes one dev. Simply Shippit treats milestone = feature, issue = AC, PR closes the loop.</li>
-              <li><strong>AC traceability.</strong> Every test, every review, every commit links back to the issue's acceptance criteria. No drift.</li>
-              <li><strong>The CHECK layer.</strong> "Tasks done" &ne; "goals met." <code>/shippit:check</code> runs verify-before-shipping with evidence.</li>
-              <li><strong>Session rituals.</strong> <code>/shippit:gm</code> &amp; <code>/shippit:gn</code> sync state with GitHub each day, across the team.</li>
-            </ul>
-          </div>
-          <div>
-            <div class="card glow" style="border-left:3px solid var(--accent);">
-              <h4>Pipeline</h4>
-              <p style="font-family:var(--font-mono);font-size:0.78em;line-height:1.7;">/shippit:plan &nbsp;&rarr;&nbsp; scan &middot; research &middot; propose<br>/shippit:build &nbsp;&rarr;&nbsp; implement &middot; test<br>/shippit:check &nbsp;&rarr;&nbsp; review &middot; verify<br>/shippit:ship &nbsp;&rarr;&nbsp; verify &middot; test &middot; commit &middot; pr</p>
-            </div>
-            <p class="muted" style="font-size:0.74em;margin-top:0.8em;">22 skills &middot; 7 agents &middot; GitHub-native state. Plugin for Claude Code. M1 dropping soon.</p>
-          </div>
-        </div>
       </section>
 
       <!-- 22. WHAT BROKE / WHAT STUCK -->
@@ -635,12 +635,12 @@ $ claude
         <h3>Skills are markdown.<br><em>Anyone can write one.<span class="pt">.</span></em></h3>
         <div class="cols">
           <div class="card glow">
-            <h4>What is a skill</h4>
-            <p>Frontmatter (<code>name</code> + <code>description</code>) is the index the agent memorizes — pennies of context. The body loads on demand, only when the trigger matches.</p>
+            <h4>Where skills travel</h4>
+            <p>Same markdown file runs on Claude Code, Cursor, Codex, Windsurf, Gemini CLI. The frontmatter is the index every agent reads; the body is the prompt every agent executes.</p>
             <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li>Portable: Claude Code, Cursor, Codex, Gemini CLI</li>
-              <li>200 skills cost almost nothing until invoked</li>
               <li>Same shape as Cursor rules, Codex <code>AGENTS.md</code></li>
+              <li>Skill written for one CLI ships on all of them</li>
+              <li>Anthropic's catalog is <a href="https://github.com/anthropics/skills"><code>anthropics/skills</code></a> — MIT, fork-friendly</li>
             </ul>
           </div>
           <div class="card glow">
@@ -653,7 +653,37 @@ $ claude
             </ul>
           </div>
         </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:42em;">Every link on the next slides is <em>one prompt away</em> from being a local skill in your repo.</p>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:42em;">Every link on the next slides is a skill you can drop into your repo and commit by tonight.</p>
+      </section>
+
+      <!-- 23B. SKILLS BEYOND THE CLI — vibe-code platforms -->
+      <section data-atmo="purple-deep">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Beyond the CLI · vibe-code platforms</div>
+        <h3>Same markdown.<br><em>Different IDE.<span class="pt">.</span></em></h3>
+        <div class="cols">
+          <div class="card glow">
+            <h4>Lovable — workspace skills</h4>
+            <p><a href="https://docs.lovable.dev/features/skills"><code>docs.lovable.dev/features/skills</code></a> ships the <code>SKILL.md</code> spec verbatim: name, <em>"Use when…"</em> description, markdown body, optional bundled files (200 / 10 MB).</p>
+            <ul style="font-size:0.78em;margin-top:0.5em;">
+              <li>Workspace-scoped, per-project toggle</li>
+              <li>5 creation paths: chat, manual, GitHub import, ZIP, save-from-chat</li>
+              <li><code>/</code>-invoke or auto-trigger on description match</li>
+              <li>Export <code>.zip</code> → portable to any Agent-Skills-compliant tool</li>
+            </ul>
+          </div>
+          <div class="card glow">
+            <h4>Replit — <code>/.agents/skills/</code></h4>
+            <p><a href="https://docs.replit.com/tutorials/agent-skills"><code>docs.replit.com/tutorials/agent-skills</code></a> — drop markdown into the hidden folder, Replit Agent loads name+description on session start, body on match.</p>
+            <ul style="font-size:0.78em;margin-top:0.5em;">
+              <li>30–100 tokens per skill at startup, lazy-load full body</li>
+              <li>Same frontmatter shape as Claude / Cursor / Codex</li>
+              <li>Persists context across chats — no re-priming</li>
+              <li>One file ships on Replit + Claude Code + Cursor unchanged</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:52em;"><strong>Bolt.new / v0 / Volt</strong> — no native skill registry yet, but <code>AGENTS.md</code> at repo root works as the global system-prompt slot. The spec is converging: <a href="https://sourcetoad.com/using-agents-md-in-replit-or-lovable/">one <code>AGENTS.md</code></a> + a <code>skills/</code> folder is becoming the lowest common denominator across CLIs and vibe-code IDEs.</p>
       </section>
 
       <!-- 24. WEB3 SHELF -->
@@ -743,7 +773,7 @@ $ claude
             </tr>
             <tr>
               <td><strong>GSD</strong></td>
-              <td><a href="https://github.com/gsd-build/gsd-2"><code>github.com/gsd-build/gsd-2</code></a> · <code>npx gsd-pi</code></td>
+              <td><a href="https://github.com/gsd-build/gsd-1"><code>github.com/gsd-build/gsd-1</code></a> · <code>npx gsd-pi</code></td>
             </tr>
             <tr>
               <td><strong>OpenSpec</strong></td>
@@ -755,12 +785,37 @@ $ claude
             </tr>
             <tr>
               <td><strong>Simply Shippit</strong></td>
-              <td><a href="https://shippit.app"><code>shippit.app</code></a> · early access tonight</td>
+              <td><a href="https://shippit.app"><code>shippit.app</code></a> · coming soon (internal use only) — keep in touch</td>
             </tr>
           </tbody>
         </table>
         <p class="lead" style="margin-top:1.1em;font-size:1.05em;max-width:32ch;"><em>This is a startkit.</em></p>
         <p class="muted" style="font-size:0.84em;margin-top:0.4em;max-width:48em;">Anything not on this slide — your agent can find a fitter alternative in one prompt. The shelf is infinite. Ask for the skill that matches <em>your</em> stack.</p>
+      </section>
+
+      <!-- 26b. SIMPLY SHIPPIT — coming soon (moved next to CTA) -->
+      <section data-atmo="purple-deep">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Coming soon · simply shippit &nbsp;·&nbsp; think &middot; build &middot; check &middot; ship</div>
+        <h3>Four verbs. <em>GitHub keeps score.<span class="pt">.</span></em></h3>
+        <div class="cols">
+          <div>
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.62em;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:0.6em;">What the other SDD frameworks don't solve</p>
+            <ul style="font-size:0.86em;line-height:1.45;">
+              <li><strong>Team coordination.</strong> Most SDD assumes one dev. Simply Shippit treats milestone = feature, issue = AC, PR closes the loop.</li>
+              <li><strong>AC traceability.</strong> Every test, every review, every commit links back to the issue's acceptance criteria. No drift.</li>
+              <li><strong>The CHECK layer.</strong> "Tasks done" &ne; "goals met." <code>/shippit:check</code> runs verify-before-shipping with evidence.</li>
+              <li><strong>Session rituals.</strong> <code>/shippit:gm</code> &amp; <code>/shippit:gn</code> sync state with GitHub each day, across the team.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="card glow" style="border-left:3px solid var(--accent);">
+              <h4>Pipeline</h4>
+              <p style="font-family:var(--font-mono);font-size:0.78em;line-height:1.7;">/shippit:plan &nbsp;&rarr;&nbsp; scan &middot; research &middot; propose<br>/shippit:build &nbsp;&rarr;&nbsp; implement &middot; test<br>/shippit:check &nbsp;&rarr;&nbsp; review &middot; verify<br>/shippit:ship &nbsp;&rarr;&nbsp; verify &middot; test &middot; commit &middot; pr</p>
+            </div>
+            <p class="muted" style="font-size:0.74em;margin-top:0.8em;">22 skills &middot; 7 agents &middot; GitHub-native state. Plugin for Claude Code. M1 dropping soon.</p>
+          </div>
+        </div>
       </section>
 
       <!-- 27. CTA — vibe code session -->
