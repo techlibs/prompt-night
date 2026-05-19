@@ -169,27 +169,34 @@ $ git log -1 --oneline
         <h3>Skills are the new <em>function calls.<span class="pt">.</span></em></h3>
         <div class="cols-2-1" style="margin-top:0.6em;">
           <div>
-<pre><code class="language-markdown">---
+<pre style="font-size:0.78em;"><code class="language-markdown">---
 name: brainstorming
-description: Use this before any creative work —
-  creating features, building components, adding
-  functionality. Explores intent and design before
-  implementation.
+description: Use before any creative work —
+  features, components, functionality.
+  Explores intent and design first.
 ---
 
 # Brainstorming Ideas Into Designs
 
 1. Explore project context
-2. Ask clarifying questions, one at a time
-3. Propose 2-3 approaches with trade-offs
-4. Present design, get approval per section
+2. Ask clarifying questions
+3. Propose 2-3 approaches w/ trade-offs
+4. Present design, get approval
 5. Write spec → invoke writing-plans</code></pre>
           </div>
-          <div>
+          <div style="display:flex;flex-direction:column;gap:0.6em;">
             <div class="card glow">
               <h4>Lazy-loaded catalog</h4>
-              <p>Agent indexes descriptions. Pulls bodies only on match. 200+ workflows. Zero context bloat.</p>
-              <p class="muted" style="font-size:0.78em;margin-top:0.6em;">Source: <code>superpowers:brainstorming</code> — scoped this deck.</p>
+              <p style="font-size:0.82em;">Agent indexes descriptions. Pulls bodies only on match. 200+ workflows. Zero context bloat.</p>
+              <p class="muted" style="font-size:0.74em;margin-top:0.4em;">Source: <code>superpowers:brainstorming</code> — scoped this deck.</p>
+            </div>
+            <div class="card glow">
+              <h4>Anatomy</h4>
+              <ul style="font-size:0.78em;margin-top:0.3em;">
+                <li><strong>Frontmatter</strong> = always-loaded one-liner. Routing layer.</li>
+                <li><strong>Body</strong> = procedure, fetched on match.</li>
+                <li><strong><code>references/</code></strong> = even lazier — loaded only if body asks.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -291,28 +298,6 @@ git worktree add ../agent-b feature/tdd-mode
 git worktree add ../agent-c feature/yolo-mode</code></pre>
           <p class="muted" style="font-size:0.78em;text-align:center;margin:0.5em 0 0;">Same repo, N filesystems. Merge later, in one place. No worktree, no parallel.</p>
         </div>
-      </section>
-
-      <!-- 08. OPERATING CRAFT — dials -->
-      <section data-atmo="slate-steel">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>The dials · 04b &nbsp;·&nbsp; cost as a knob</div>
-        <h3>Three dials.<br><em>Or your $40 becomes $400.<span class="pt">.</span></em></h3>
-        <div class="cols-3" style="margin-top:0.4em;">
-          <div class="card glow">
-            <h4>Model split</h4>
-            <p>Opus plans &amp; reviews. Sonnet executes. ~5&times; cost gap, ~0&times; quality gap if the plan is good.</p>
-          </div>
-          <div class="card glow">
-            <h4>Context budget</h4>
-            <p><code>/compact</code> on long sessions. <code>CLAUDE.md</code> for state worth keeping. New chat when the cache window slips past 5 minutes — token cost cliff, not a curve.</p>
-          </div>
-          <div class="card glow">
-            <h4>Token compression</h4>
-            <p><a href="https://github.com/JuliusBrussee/caveman"><code>caveman</code></a> hook drops articles + filler. <a href="https://github.com/rtk-ai/rtk">rtk</a> trims tool schemas. ~30–60% off long sessions.</p>
-          </div>
-        </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:38em;">Cost is a knob, not a verdict. Tune the split, isolate the checkouts, compress the chatter — same output, fraction of the spend.</p>
       </section>
 
       <!-- 13. E2E — the only warm slide -->
@@ -791,6 +776,28 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
           </tbody>
         </table>
         <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:52em;">Orchestration is a slot. Pick the dialect that matches your runtime — the loop underneath is the one we walked through tonight.</p>
+      </section>
+
+      <!-- 08. OPERATING CRAFT — dials (moved here, right before pillars recap) -->
+      <section data-atmo="slate-steel">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>The dials · 04b &nbsp;·&nbsp; cost as a knob</div>
+        <h3>Three dials.<br><em>Or your $40 becomes $400.<span class="pt">.</span></em></h3>
+        <div class="cols-3" style="margin-top:0.4em;">
+          <div class="card glow">
+            <h4>Model split</h4>
+            <p>Opus plans &amp; reviews. Sonnet executes. ~5&times; cost gap, ~0&times; quality gap if the plan is good.</p>
+          </div>
+          <div class="card glow">
+            <h4>Context budget</h4>
+            <p><code>/compact</code> on long sessions. <code>CLAUDE.md</code> for state worth keeping. New chat when the cache window slips past 5 minutes — token cost cliff, not a curve.</p>
+          </div>
+          <div class="card glow">
+            <h4>Token compression</h4>
+            <p><a href="https://github.com/JuliusBrussee/caveman"><code>caveman</code></a> hook drops articles + filler. <a href="https://github.com/rtk-ai/rtk">rtk</a> trims tool schemas. ~30–60% off long sessions.</p>
+          </div>
+        </div>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:38em;">Cost is a knob, not a verdict. Tune the split, isolate the checkouts, compress the chatter — same output, fraction of the spend.</p>
       </section>
 
       <!-- 26. RECEIPTS — pillars + frameworks recap + startkit closer -->
