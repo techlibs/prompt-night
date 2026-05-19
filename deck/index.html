@@ -242,7 +242,7 @@ $ claude
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Orchestration · 04a.5 &nbsp;·&nbsp; the filesystem problem</div>
         <h3>One repo.<br><em>Three agents. Boom.<span class="pt">.</span></em></h3>
-        <div class="diff" style="margin:0.6em auto 0;align-items:stretch;align-self:center;max-width:42em;width:100%;">
+        <div class="diff" style="margin:0.6em auto 0;align-items:stretch;align-self:center;max-width:56em;width:100%;">
           <div class="col bad">
             <h4>Without worktrees</h4>
             <div class="dag sm" style="margin:0;border:none;padding:0.6em 0 0;background:none;box-shadow:none;backdrop-filter:none;">agent-a    agent-b    agent-c
@@ -276,11 +276,13 @@ $ claude
          └──────────┘</div>
           </div>
         </div>
-        <p class="muted" style="font-size:0.78em;text-align:center;max-width:42em;margin:0.6em auto 0.4em;">Same physics as threads sharing memory. Need isolation.</p>
-<pre style="margin:0.2em auto 0;max-width:42em;"><code class="language-bash">git worktree add ../agent-a feature/sdd-mode
+        <div style="max-width:56em;margin:0 auto;width:100%;">
+          <p class="muted" style="font-size:0.78em;text-align:center;margin:0.6em 0 0.4em;">Same physics as threads sharing memory. Need isolation.</p>
+          <pre style="margin:0.2em 0 0;width:100%;"><code class="language-bash">git worktree add ../agent-a feature/sdd-mode
 git worktree add ../agent-b feature/tdd-mode
 git worktree add ../agent-c feature/yolo-mode</code></pre>
-        <p class="muted" style="font-size:0.78em;margin:0.5em auto 0;max-width:42em;">Same repo, N filesystems. Merge later, in one place. No worktree, no parallel.</p>
+          <p class="muted" style="font-size:0.78em;text-align:center;margin:0.5em 0 0;">Same repo, N filesystems. Merge later, in one place. No worktree, no parallel.</p>
+        </div>
       </section>
 
       <!-- 08. OPERATING CRAFT — dials -->
