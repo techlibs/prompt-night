@@ -581,6 +581,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
               <li><strong>How:</strong> Tailwind v4 tokens + dark-first React components</li>
               <li>Production-tested by the Claude Code team</li>
               <li>Fork, repaint with your own token layer (e.g. /gsp)</li>
+              <li style="color:var(--danger);"><strong>Tell:</strong> ship raw → every app looks the same. AI-made template, zero brand variation.</li>
               <li><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener"><code>anthropic.com/news/claude-design</code></a></li>
             </ul>
           </div>
@@ -601,7 +602,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
           </thead>
           <tbody>
             <tr><td><strong>/gsp</strong></td><td>Markdown contract + skills</td><td>Brand identity, voice, generative output</td><td>You want one source of truth across deck, app, docs.</td></tr>
-            <tr><td><strong>Claude Design</strong></td><td>React component library</td><td>AI-native UI primitives</td><td>You're building a chat or agent surface from scratch.</td></tr>
+            <tr><td><strong>Claude Design</strong></td><td>React component library</td><td>AI-native UI primitives</td><td>You're building a chat surface from scratch — <em>and you'll repaint it</em>, else every app looks identical.</td></tr>
             <tr><td><strong>Figma MCP</strong></td><td>MCP server</td><td>Pixel-true handoff</td><td>Designers already finalized screens in Figma.</td></tr>
           </tbody>
         </table>
@@ -639,6 +640,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Two surfaces · always-on vs on-demand</div>
         <h3>Skills load lazy.<br><em>CLAUDE.md is always there.<span class="pt">.</span></em></h3>
+        <p class="muted" style="font-size:0.7em;margin-top:-0.4em;">Both are just markdown. Difference is when they load.</p>
         <div class="cols">
           <div class="card glow">
             <h4>Static prompt — <code>CLAUDE.md</code> / <code>AGENTS.md</code></h4>
@@ -694,62 +696,32 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
         <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:46em;">Skills that update memory. Memory that feeds skills. Agent gets sharper per session — not per training run.</p>
       </section>
 
-      <!-- 23B. SKILLS BEYOND THE CLI — vibe-code platforms -->
-      <section data-atmo="purple-deep">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Beyond the CLI · vibe-code platforms</div>
-        <h3>Same markdown.<br><em>Different IDE.<span class="pt">.</span></em></h3>
-        <div class="cols">
-          <div class="card glow">
-            <h4>Lovable — workspace skills</h4>
-            <p><a href="https://docs.lovable.dev/features/skills"><code>docs.lovable.dev/features/skills</code></a> ships the <code>SKILL.md</code> spec verbatim: name, <em>"Use when…"</em> description, markdown body, optional bundled files (200 / 10 MB).</p>
-            <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li>Workspace-scoped, per-project toggle</li>
-              <li>5 creation paths: chat, manual, GitHub import, ZIP, save-from-chat</li>
-              <li><code>/</code>-invoke or auto-trigger on description match</li>
-              <li>Export <code>.zip</code> → portable to any Agent-Skills-compliant tool</li>
-            </ul>
-          </div>
-          <div class="card glow">
-            <h4>Replit — <code>/.agents/skills/</code></h4>
-            <p><a href="https://docs.replit.com/tutorials/agent-skills"><code>docs.replit.com/tutorials/agent-skills</code></a> — drop markdown into the hidden folder, Replit Agent loads name+description on session start, body on match.</p>
-            <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li>30–100 tokens per skill at startup, lazy-load full body</li>
-              <li>Same frontmatter shape as Claude / Cursor / Codex</li>
-              <li>Persists context across chats — no re-priming</li>
-              <li>One file ships on Replit + Claude Code + Cursor unchanged</li>
-            </ul>
-          </div>
-        </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:52em;"><strong>Bolt.new / v0 / Volt</strong> — no native skill registry yet, but <code>AGENTS.md</code> at repo root works as the global system-prompt slot. The spec is converging: <a href="https://sourcetoad.com/using-agents-md-in-replit-or-lovable/">one <code>AGENTS.md</code></a> + a <code>skills/</code> folder is becoming the lowest common denominator across CLIs and vibe-code IDEs.</p>
-      </section>
-
-      <!-- 23C. MCP + API KEYS + /chrome — agents plug into everything -->
+      <!-- 23B. SKILLS TRAVEL + PLUG IN — merged: vibe-code platforms + MCP wiring -->
       <section data-atmo="warm-ember">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Wiring · MCP · API keys · <code>/chrome</code></div>
-        <h3>Skills are the brain.<br><em>MCP is the hands.<span class="pt">.</span></em></h3>
+        <div class="eyebrow"><span class="dot"></span>Same markdown · every IDE · every SaaS</div>
+        <h3>Skills travel.<br><em>And they plug in.<span class="pt">.</span></em></h3>
         <div class="cols">
           <div class="card glow">
-            <h4>MCP — one protocol, every SaaS</h4>
-            <p>Model Context Protocol exposes any tool (Gmail, Slack, Drive, Linear, GitHub, Notion, Figma, Stripe, Postgres) as typed actions the agent can call. Install once, every skill can use it.</p>
+            <h4>Travel — same <code>SKILL.md</code>, different IDE</h4>
+            <p>Frontmatter (<code>name</code> + <code>description</code>) is the contract. The body is markdown. One file ships unchanged on Claude Code · Cursor · Replit · Lovable.</p>
             <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li>Public registry · <a href="https://github.com/modelcontextprotocol/servers"><code>modelcontextprotocol/servers</code></a></li>
-              <li>Same server runs on Claude Code, Cursor, Codex, Windsurf</li>
-              <li>No SDK glue — agent sees the tool, calls it, ships</li>
+              <li><strong>Lovable</strong> · <a href="https://docs.lovable.dev/features/skills"><code>docs.lovable.dev/features/skills</code></a> — workspace-scoped, ZIP-portable</li>
+              <li><strong>Replit</strong> · <a href="https://docs.replit.com/tutorials/agent-skills"><code>.agents/skills/</code></a> — same frontmatter shape</li>
+              <li><strong>Bolt / v0 / Volt</strong> — <code>AGENTS.md</code> at repo root as the global slot</li>
             </ul>
           </div>
           <div class="card glow">
-            <h4>API keys + <code>/chrome</code> — the escape hatch</h4>
-            <p>No MCP server yet? Drop the API key in <code>.env</code>, skill calls the REST endpoint. Still no API? <code>/chrome</code> MCP drives a real browser — clicks, types, scrapes, screenshots.</p>
+            <h4>Plug in — MCP · API key · <code>/chrome</code></h4>
+            <p>Skills are the brain. MCP is the hands. Three rungs to reach anything.</p>
             <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li><code>claude-in-chrome</code> · agent operates Chrome end-to-end</li>
-              <li>Reads console, network, DOM — closes the loop on any web app</li>
-              <li>If a human can do it in a browser, the agent can too</li>
+              <li><strong>MCP</strong> · <a href="https://github.com/modelcontextprotocol/servers"><code>modelcontextprotocol/servers</code></a> — Gmail, Slack, Linear, Stripe, Postgres as typed actions</li>
+              <li><strong>API key in <code>.env</code></strong> — skill calls REST when no MCP yet</li>
+              <li><strong><code>/chrome</code> MCP</strong> — drives a real browser when there's no API at all</li>
             </ul>
           </div>
         </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:52em;">Translation: <strong>your agent connects to literally everything.</strong> Native MCP first, REST with a key second, browser-driving third. Three rungs, zero dead ends.</p>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:52em;"><strong>Three rungs, zero dead ends.</strong> Native MCP first, REST with a key second, browser-driving third. If a human can reach it, the agent can.</p>
       </section>
 
       <!-- 24. WEB3 SHELF -->
