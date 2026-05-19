@@ -474,10 +474,10 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
         <div class="eyebrow"><span class="dot"></span>Receipt · ipe-city audit loop</div>
         <h3>The agent <em>audited its own contracts.<span class="pt">.</span></em></h3>
         <div style="display:flex;gap:0.9em;flex-wrap:wrap;margin-top:0.6em;">
-          <div class="hash" style="font-size:0.9em;">solidity-security</div>
-          <div class="hash" style="font-size:0.9em;">gas-optimization</div>
-          <div class="hash" style="font-size:0.9em;">secrets-scanner</div>
-          <div class="hash" style="font-size:0.9em;">dependency-supply-chain</div>
+          <a class="hash" style="font-size:0.9em;" href="https://github.com/trailofbits/skills">solidity-security</a>
+          <a class="hash" style="font-size:0.9em;" href="https://ethskills.com">gas-optimization</a>
+          <a class="hash" style="font-size:0.9em;" href="https://github.com/auditmos/skills">secrets-scanner</a>
+          <a class="hash" style="font-size:0.9em;" href="https://github.com/OpenZeppelin/openzeppelin-skills">dependency-supply-chain</a>
         </div>
         <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.62em;text-transform:uppercase;letter-spacing:0.18em;margin:0.9em 0 0.3em;">Same agent. Same loop. 4 audit skills, run on every PR.</p>
         <p style="font-size:0.82em;line-height:1.45;margin:0.6em 0 0;max-width:42em;">
@@ -576,12 +576,12 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
           </div>
           <div class="card glow">
             <h4>Claude Design · Anthropic Labs</h4>
-            <p>Open design system for AI-native surfaces. Brand-neutral primitives — chat, citations, tool calls, artifacts.</p>
+            <p>Iterative design agent with a few tricks up its sleeve. Reach for it if you like the Claude app aesthetic.</p>
             <ul style="font-size:0.72em;margin-top:0.5em;">
-              <li><strong>How:</strong> Tailwind v4 tokens + dark-first React components</li>
+              <li><strong>How:</strong> Tailwind v4 tokens + dark-first React components, agent iterates on the surface</li>
               <li>Production-tested by the Claude Code team</li>
               <li>Fork, repaint with your own token layer (e.g. /gsp)</li>
-              <li style="color:var(--danger);"><strong>Tell:</strong> ship raw → every app looks the same. AI-made template, zero brand variation.</li>
+              <li style="color:var(--danger);"><strong>Tell:</strong> strong embedded DNA — after a few runs you'll see the Claude-app fingerprint in the initial outputs.</li>
               <li><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener"><code>anthropic.com/news/claude-design</code></a></li>
             </ul>
           </div>
@@ -602,37 +602,10 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
           </thead>
           <tbody>
             <tr><td><strong>/gsp</strong></td><td>Markdown contract + skills</td><td>Brand identity, voice, generative output</td><td>You want one source of truth across deck, app, docs.</td></tr>
-            <tr><td><strong>Claude Design</strong></td><td>React component library</td><td>AI-native UI primitives</td><td>You're building a chat surface from scratch — <em>and you'll repaint it</em>, else every app looks identical.</td></tr>
+            <tr><td><strong>Claude Design</strong></td><td>Iterative design agent + React components</td><td>AI-native UI primitives</td><td>You like the Claude app look — heads-up, its DNA bleeds into the initial outputs.</td></tr>
             <tr><td><strong>Figma MCP</strong></td><td>MCP server</td><td>Pixel-true handoff</td><td>Designers already finalized screens in Figma.</td></tr>
           </tbody>
         </table>
-      </section>
-
-      <!-- 22. WHAT BROKE / WHAT STUCK -->
-      <section data-atmo="slate-steel">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Honest notes</div>
-        <h3>Scar tissue.<br><em>Rules now.<span class="pt">.</span></em></h3>
-        <div class="cols">
-          <div class="card" style="border-left:2px solid var(--danger);">
-            <h4 style="color:var(--danger);">Scar tissue</h4>
-            <ul>
-              <li>Vibes-first: agent deleted failing tests to turn the suite green.</li>
-              <li>Skill descriptions like <em>"helps with code"</em> — never fired. Trigger words matter.</li>
-              <li>Parallel agents on one branch — lost commits. No worktree, no parallelism.</li>
-              <li>Long-running plans drifted — agent worked from a stale spec.</li>
-            </ul>
-          </div>
-          <div class="card" style="border-left:2px solid var(--success);">
-            <h4 style="color:var(--success);">Rules now</h4>
-            <ul>
-              <li>One commit, one AC. PR body writes itself.</li>
-              <li>Specs live in the repo. Markdown, diffable, next to code.</li>
-              <li>"Done" needs proof — verification skill or it didn't happen.</li>
-              <li>One conductor dispatches. Model never picks its own next move.</li>
-            </ul>
-          </div>
-        </div>
       </section>
 
       <!-- 23A. SKILLS vs CLAUDE.md/AGENTS.md + self-learning loop -->
@@ -757,6 +730,23 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
             <tr>
               <td><a href="https://github.com/auditmos/skills"><code>auditmos/skills</code></a></td>
               <td><code>audit-signature</code> · <code>audit-liquidation-dos</code> · <code>audit-external-call</code> · <code>audit-arithmetic</code></td>
+            </tr>
+            <tr><th colspan="2" style="text-align:left;padding-top:0.7em;font-size:0.78em;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">The 4 we ran on ipê-city</th></tr>
+            <tr>
+              <td><a href="https://github.com/trailofbits/skills"><code>solidity-security</code></a></td>
+              <td>Reentrancy · access control · overflow · delegatecall — block merge on finding</td>
+            </tr>
+            <tr>
+              <td><a href="https://ethskills.com"><code>solidity-gas-optimization</code></a></td>
+              <td>80+ RareSkills patterns · storage packing · calldata · short-circuit</td>
+            </tr>
+            <tr>
+              <td><a href="https://github.com/auditmos/skills"><code>secrets-scanner</code></a></td>
+              <td>Leaked keys / tokens in <code>.env</code>, fixtures, deploy scripts · pre-commit gate</td>
+            </tr>
+            <tr>
+              <td><a href="https://github.com/OpenZeppelin/openzeppelin-skills"><code>dependency-supply-chain-security</code></a></td>
+              <td>npm audit · vulnerable / typosquatted packages · Foundry lib pinning</td>
             </tr>
           </tbody>
         </table>

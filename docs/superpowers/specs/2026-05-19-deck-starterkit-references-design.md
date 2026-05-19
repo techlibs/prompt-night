@@ -30,9 +30,9 @@ Give the audience a categorized, skim-fast resource list — a startkit — for 
   - `OpenZeppelin/openzeppelin-skills` » contract patterns from the OG
   - `OpenZeppelin/openzeppelin-mcp` » NL → contract via MCP
   - `coinbase/agentkit` » agent → onchain actions, any framework
-  - `bwb-tokenization/.claude/skills/*` » solidity-auditor, token-integration-analyzer
-  - same shelf: dos-griefing, external-call-safety, signature-replay, input-arithmetic
-- **Notes:** 70s. Beat 1 = ethskills proves the pattern: a website is the skill, agents `curl` it. Beat 2 = OZ skills + MCP = no more half-baked ERC scaffolds. Beat 3 = bwb shelf is what we used to audit ipê-city — six skills, real findings.
+  - `trailofbits/skills` » Trail of Bits audit shelf, vulnerability detection + workflows
+  - `auditmos/skills` » audit-signature, audit-liquidation-dos, audit-external-call, audit-arithmetic
+- **Notes:** 70s. Beat 1 = ethskills proves the pattern: a website is the skill, agents `curl` it. Beat 2 = OZ skills + MCP = no more half-baked ERC scaffolds. Beat 3 = trailofbits + auditmos are public shelves with the same shape we used to audit ipê-city.
 
 ### Slide N3 (new 25) — Orchestration + Design shelf
 - **`data-atmo="warm-ember"`**
