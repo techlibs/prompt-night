@@ -6,4 +6,6 @@ node_modules/
 
 # Speaker-only version (notes intact, never publish)
 deck/speaker.html
+deck/vendor/
 docs/superpowers/specs/2026-05-18-prompt-night-speaker-notes.md
+SPEAKER.md
