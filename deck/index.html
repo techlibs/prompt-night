@@ -113,7 +113,7 @@
             <p style="font-size:0.78em;margin:0.4em 0 0.2em;"><strong>What you get</strong></p>
             <p style="font-size:0.74em;margin:0;">Happy path is correct. Timezone chain handled. Edge cases you didn't think to name fall back to defaults — and you'll never know.</p>
             <p style="font-size:0.7em;margin:0.6em 0 0.2em;"><strong>426 lines</strong> · <strong>2 tests</strong> · <strong>6 min</strong></p>
-            <p class="muted" style="font-size:0.72em;margin-top:0.5em;border-top:1px solid var(--border);padding-top:0.5em;"><strong style="color:var(--warning);">Gain:</strong> right thinking, right shape, atomic commits.<br><strong style="color:var(--warning);">Cost:</strong> the plan lives in <em>your head</em>, not on disk. The next agent (or future you) starts from zero.</p>
+            <p class="muted" style="font-size:0.72em;margin-top:0.5em;border-top:1px solid var(--border);padding-top:0.5em;"><strong style="color:var(--warning);">Gain:</strong> right thinking, right shape, atomic commits.<br><strong style="color:var(--warning);">Cost:</strong> plan is prose, not an executable contract. No failing test pins behavior. Save-to-disk is opt-in — default lives in chat.</p>
           </div>
 
           <div class="card glow" style="border-left:2px solid var(--accent);">
@@ -242,7 +242,7 @@ $ claude
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Orchestration · 04a.5 &nbsp;·&nbsp; the filesystem problem</div>
         <h3>One repo.<br><em>Three agents. Boom.<span class="pt">.</span></em></h3>
-        <div class="diff" style="margin-top:0.6em;align-items:stretch;">
+        <div class="diff" style="margin:0.6em auto 0;align-items:stretch;align-self:center;max-width:42em;width:100%;">
           <div class="col bad">
             <h4>Without worktrees</h4>
             <div class="dag sm" style="margin:0;border:none;padding:0.6em 0 0;background:none;box-shadow:none;backdrop-filter:none;">agent-a    agent-b    agent-c
@@ -277,10 +277,10 @@ $ claude
           </div>
         </div>
         <p class="muted" style="font-size:0.78em;text-align:center;max-width:42em;margin:0.6em auto 0.4em;">Same physics as threads sharing memory. Need isolation.</p>
-<pre style="margin-top:0.2em;"><code class="language-bash">git worktree add ../agent-a feature/sdd-mode
+<pre style="margin:0.2em auto 0;max-width:42em;"><code class="language-bash">git worktree add ../agent-a feature/sdd-mode
 git worktree add ../agent-b feature/tdd-mode
 git worktree add ../agent-c feature/yolo-mode</code></pre>
-        <p class="muted" style="font-size:0.78em;margin-top:0.5em;max-width:42em;">Same repo, N filesystems. Merge later, in one place. No worktree, no parallel.</p>
+        <p class="muted" style="font-size:0.78em;margin:0.5em auto 0;max-width:42em;">Same repo, N filesystems. Merge later, in one place. No worktree, no parallel.</p>
       </section>
 
       <!-- 08. OPERATING CRAFT — dials -->
