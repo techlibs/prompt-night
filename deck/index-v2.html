@@ -288,12 +288,12 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
             <p>Opus plans &amp; reviews. Sonnet executes. ~5&times; cost gap, ~0&times; quality gap if the plan is good.</p>
           </div>
           <div class="card glow">
-            <h4>Worktrees</h4>
-            <p><code>git worktree add</code> per agent. Same repo, isolated checkouts. Three agents, zero merge conflicts on <code>package.json</code>.</p>
+            <h4>Context budget</h4>
+            <p><code>/compact</code> on long sessions. <code>MEMORY.md</code> for state worth keeping. New chat when the cache window slips past 5 minutes — token cost cliff, not a curve.</p>
           </div>
           <div class="card glow">
             <h4>Token compression</h4>
-            <p><code>caveman</code> hook drops articles + filler. <a href="https://github.com/rtk-ai/rtk">rtk</a> trims tool schemas. ~30–60% off long sessions.</p>
+            <p><a href="https://github.com/JuliusBrussee/caveman"><code>caveman</code></a> hook drops articles + filler. <a href="https://github.com/rtk-ai/rtk">rtk</a> trims tool schemas. ~30–60% off long sessions.</p>
           </div>
         </div>
         <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:38em;">Cost is a knob, not a verdict. Tune the split, isolate the checkouts, compress the chatter — same output, fraction of the spend.</p>
