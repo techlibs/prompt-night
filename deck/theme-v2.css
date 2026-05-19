@@ -1,0 +1,729 @@
+/* Shippit deck — v2
+ * Atmospheric, glass-forward, lifted contrast.
+ * Sources: shippit-landing/.design/branding/shippit/patterns/STYLE.md
+ *          shippit-landing/src/app/globals.css
+ *          gsp:get-shit-pretty design heuristics
+ * Built per audits: deck design audit + storytelling critique.
+ */
+
+:root {
+  /* Surfaces — lifted off pure black so glass can read */
+  --bg:        #050507;
+  --bg-2:      #08080C;
+  --fg:        #FAFAFA;
+  --fg-soft:   #F4F4F7;
+  --card:      #0E0E14;
+  --card-2:    #14141C;
+
+  /* Borders — always white-alpha per shippit STYLE.md */
+  --hairline:  rgba(255,255,255,0.06);
+  --edge:      rgba(255,255,255,0.10);
+  --edge-2:    rgba(255,255,255,0.16);
+  --edge-hot:  rgba(255,255,255,0.24);
+
+  /* Text */
+  --muted:     #A1A1AA;
+  --muted-2:   #BFBFC9;
+  --text-tertiary: color-mix(in srgb, var(--fg) 54%, transparent);
+
+  /* Accents (saturated) — only the dot uses these as fills */
+  --brand-purple: #8B5CF6;
+  --brand-purple-glow: rgba(139,92,246,0.55);
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger:  #EF4444;
+
+  /* Type system */
+  --font-heading: "Instrument Serif", Georgia, serif;
+  --font-body:    "Barlow", system-ui, sans-serif;
+  --font-eyebrow: "Barlow Semi Condensed", "Barlow", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", Consolas, monospace;
+
+  /* Motion */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --t-fast: 150ms;
+  --t-med: 240ms;
+  --t-slow: 420ms;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Base
+ * ──────────────────────────────────────────────────────────── */
+
+html, body, .reveal {
+  background: var(--bg) !important;
+  color: var(--fg);
+}
+
+.reveal {
+  font-family: var(--font-body);
+  /* Scales with viewport — readable on any screen 1280-3000px wide.
+   * 1vw on a 1920px screen = 19.2px → comfortable hero body. */
+  font-size: clamp(20px, 1.35vw, 34px);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.reveal .slides { text-align: left; }
+
+/* Force every slide to fill the viewport vertically, with content
+ * centered. Reveal sets inline `height` on past/future slides for
+ * its scroll calc, but we override during render so backgrounds
+ * always reach edge-to-edge. */
+.reveal .slides > section {
+  min-height: 100vh !important;
+  height: 100vh !important;
+  padding: 5vh 6vw !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Atmospheres — one per slide-cluster, single light source
+ * ──────────────────────────────────────────────────────────── */
+
+/* Atmosphere goes on the section's own background. Do NOT override
+ * position — reveal sets `position: absolute` on sections to stack
+ * past/present/future on top of each other. Overriding it breaks the
+ * stack and cascades slides vertically below the viewport. */
+.reveal section[data-atmo] {
+  background:
+    radial-gradient(ellipse 65% 50% at 80% 12%, var(--atmo-glow, rgba(255,255,255,0.08)), transparent 62%),
+    radial-gradient(ellipse 50% 40% at 8% 96%, rgba(255,255,255,0.04), transparent 60%),
+    radial-gradient(ellipse 80% 80% at 50% 55%, transparent 50%, rgba(0,0,0,0.35) 95%),
+    var(--atmo, linear-gradient(135deg, #0F0F12 0%, #1A1A22 100%));
+}
+
+/* Atmosphere variants */
+.reveal section[data-atmo="purple-deep"] {
+  --atmo: linear-gradient(140deg, #0B0014 0%, #14002B 45%, #050007 100%);
+  --atmo-glow: rgba(139, 92, 246, 0.24);
+}
+.reveal section[data-atmo="blue-navy"] {
+  --atmo: linear-gradient(135deg, #03101F 0%, #0A1A2E 50%, #04080F 100%);
+  --atmo-glow: rgba(96, 165, 250, 0.16);
+}
+.reveal section[data-atmo="green-forest"] {
+  --atmo: linear-gradient(135deg, #02140C 0%, #0A1F18 50%, #03080A 100%);
+  --atmo-glow: rgba(34, 197, 94, 0.14);
+}
+.reveal section[data-atmo="teal-dark"] {
+  --atmo: linear-gradient(135deg, #021316 0%, #0A2226 50%, #03090B 100%);
+  --atmo-glow: rgba(45, 212, 191, 0.14);
+}
+.reveal section[data-atmo="warm-ember"] {
+  --atmo: linear-gradient(135deg, #160906 0%, #21100A 50%, #08040A 100%);
+  --atmo-glow: rgba(251, 146, 60, 0.18);
+}
+.reveal section[data-atmo="slate-steel"] {
+  --atmo: linear-gradient(135deg, #0A0E14 0%, #131822 50%, #06080C 100%);
+  --atmo-glow: rgba(148, 163, 184, 0.10);
+}
+.reveal section[data-atmo="neutral"] {
+  --atmo: linear-gradient(135deg, #0A0A10 0%, #15151E 50%, #050507 100%);
+  --atmo-glow: rgba(255, 255, 255, 0.06);
+}
+
+/* Grain — bayer-flavored noise overlay. Sits inside section,
+ * absolute so it doesn't take layout space, low opacity. */
+.reveal section[data-atmo] > .grain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.045;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 256px 256px;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Typography
+ * ──────────────────────────────────────────────────────────── */
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fg);
+  text-transform: none;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  margin: 0 0 0.4em;
+}
+
+.reveal h1 {
+  font-size: 5em;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+}
+.reveal h2 {
+  font-size: 3.4em;
+  line-height: 0.98;
+}
+.reveal h3 {
+  font-size: 2.2em;
+  line-height: 1.05;
+}
+.reveal h4 { font-size: 1.3em; }
+
+/* Trailing period treatment — dimmed signature */
+.reveal h1 .pt, .reveal h2 .pt, .reveal h3 .pt {
+  color: var(--text-tertiary);
+}
+
+/* Body text */
+.reveal p {
+  color: var(--fg);
+  line-height: 1.5;
+  margin: 0 0 0.6em;
+  max-width: 26em;
+}
+
+.reveal .lead {
+  font-size: 1.1em;
+  color: var(--fg-soft);
+  line-height: 1.45;
+  max-width: 22em;
+}
+
+.reveal .muted {
+  color: var(--muted);
+}
+
+.reveal small, .reveal .caption {
+  color: var(--muted);
+  font-size: 0.68em;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+/* Eyebrow */
+.reveal .eyebrow {
+  font-family: var(--font-eyebrow);
+  font-weight: 500;
+  font-size: 0.62em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: 1.4em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-style: normal;
+}
+
+/* Links */
+.reveal a {
+  color: var(--fg);
+  border-bottom: 1px solid var(--edge-2);
+  text-decoration: none;
+  transition: border-color var(--t-fast) var(--ease-out);
+}
+.reveal a:hover { border-color: var(--fg); }
+
+/* Lists */
+.reveal ul, .reveal ol { margin-left: 0; padding-left: 0; max-width: 28em; }
+.reveal li {
+  margin: 0.5em 0;
+  line-height: 1.45;
+  list-style: none;
+  padding-left: 1.4em;
+  position: relative;
+}
+.reveal ul li::before {
+  content: "—";
+  color: var(--muted);
+  position: absolute;
+  left: 0;
+}
+
+/* Strong / em */
+.reveal strong { color: var(--fg); font-weight: 600; }
+.reveal em { font-family: var(--font-heading); font-style: italic; }
+
+/* Inline code */
+.reveal code {
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 0.06em 0.4em;
+  font-size: 0.82em;
+  color: var(--fg);
+}
+
+/* Code blocks — frosted panel with subtle purple light source */
+.reveal pre {
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(139,92,246,0.08), transparent 55%),
+    linear-gradient(180deg, #0E0E14 0%, #08080C 100%);
+  border: 1px solid var(--edge);
+  border-radius: var(--r-lg);
+  padding: 1.2em 1.4em;
+  font-size: 0.5em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 24px 48px -20px rgba(0,0,0,0.75);
+  width: 100%;
+  margin: 0.8em 0;
+  position: relative;
+}
+
+.reveal pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: block;
+  line-height: 1.6;
+  color: var(--fg);
+  overflow-x: auto;
+  max-height: none;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Tables
+ * ──────────────────────────────────────────────────────────── */
+
+.reveal table {
+  font-size: 0.68em;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0.6em 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.005)),
+    var(--card);
+  border: 1px solid var(--edge);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 24px 48px -20px rgba(0,0,0,0.7);
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 1em 1.2em;
+  border: none;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+}
+
+.reveal table thead th {
+  font-family: var(--font-eyebrow);
+  font-weight: 500;
+  font-size: 0.78em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border-bottom: 1px solid var(--edge);
+  background: rgba(255,255,255,0.035);
+}
+
+.reveal table tbody tr:last-child td { border-bottom: none; }
+.reveal table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+.reveal table td code { font-size: 0.9em; }
+
+/* ────────────────────────────────────────────────────────────
+ * Title slides
+ * ──────────────────────────────────────────────────────────── */
+
+.reveal section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+.reveal section.title h1 {
+  font-size: 6.6em;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.5em;
+  max-width: 16ch;
+}
+
+.reveal section.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Cards — frosted glass strong
+ * ──────────────────────────────────────────────────────────── */
+
+.card {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.015) 100%);
+  backdrop-filter: blur(28px) saturate(125%);
+  -webkit-backdrop-filter: blur(28px) saturate(125%);
+  border: 1px solid var(--edge);
+  border-radius: var(--r-lg);
+  padding: 1.4em 1.6em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 24px 48px -20px rgba(0,0,0,0.75);
+  transition: border-color var(--t-fast) var(--ease-out),
+              background var(--t-fast) var(--ease-out);
+}
+.card:hover {
+  border-color: var(--edge-2);
+}
+
+/* Gradient hairline border (mask trick) */
+.card.glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgba(255,255,255,0.28), rgba(255,255,255,0.04) 45%, rgba(255,255,255,0.18));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.card h4 {
+  font-family: var(--font-eyebrow);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted-2);
+  margin-bottom: 0.6em;
+}
+
+.card p { font-size: 0.85em; }
+
+/* ────────────────────────────────────────────────────────────
+ * Layout primitives
+ * ──────────────────────────────────────────────────────────── */
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  align-items: start;
+  margin-top: 0.4em;
+}
+
+.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4em;
+  margin-top: 0.6em;
+}
+
+.cols-2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2em;
+  align-items: start;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Diffs / receipts
+ * ──────────────────────────────────────────────────────────── */
+
+.diff {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6em;
+}
+
+.diff .col {
+  position: relative;
+  padding: 1em 1.4em;
+  border-radius: var(--r-md);
+  background: rgba(255,255,255,0.02);
+}
+
+.diff .col h4 {
+  font-family: var(--font-eyebrow);
+  font-style: normal;
+  font-size: 0.62em;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.6em;
+}
+
+.diff .bad { border-left: 2px solid var(--danger); }
+.diff .bad h4 { color: var(--danger); }
+.diff .good { border-left: 2px solid var(--success); }
+.diff .good h4 { color: var(--success); }
+
+/* ────────────────────────────────────────────────────────────
+ * DAG / ascii diagrams
+ * ──────────────────────────────────────────────────────────── */
+
+.dag {
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+  color: var(--fg);
+  line-height: 1.55;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(139,92,246,0.06), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  backdrop-filter: blur(28px) saturate(120%);
+  border: 1px solid var(--edge);
+  border-radius: var(--r-lg);
+  padding: 1.6em 1.8em;
+  white-space: pre;
+  overflow-x: auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 30px 60px -28px rgba(0,0,0,0.8);
+}
+
+.dag.lg { font-size: 0.72em; padding: 2em 2.2em; }
+.dag.sm { font-size: 0.52em; padding: 1.2em 1.4em; }
+
+/* ────────────────────────────────────────────────────────────
+ * Hash chip / pill
+ * ──────────────────────────────────────────────────────────── */
+
+.hash {
+  font-family: var(--font-mono);
+  font-size: 0.62em;
+  color: var(--muted-2);
+  background: linear-gradient(180deg, #15151E, #0C0C12);
+  border: 1px solid var(--edge);
+  padding: 0.35em 0.7em;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 0.18em 0.3em 0.18em 0;
+  word-break: break-all;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.pill {
+  display: inline-block;
+  font-family: var(--font-eyebrow);
+  font-weight: 500;
+  font-size: 0.58em;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted-2);
+  border: 1px solid var(--edge);
+  border-radius: 999px;
+  padding: 0.5em 1.1em;
+  margin: 0 0.4em 0.4em 0;
+  transition: all var(--t-fast) var(--ease-out);
+  background: rgba(255,255,255,0.02);
+}
+.pill:hover { border-color: var(--edge-hot); color: var(--fg); }
+.pill.solid {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+  font-weight: 600;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Big numeric
+ * ──────────────────────────────────────────────────────────── */
+
+.bignum {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 7em;
+  line-height: 0.92;
+  color: var(--fg);
+  letter-spacing: -0.04em;
+}
+
+.bignum-label {
+  font-family: var(--font-eyebrow);
+  font-weight: 500;
+  font-size: 0.7em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-top: 0.4em;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Purple dot — breathe (not pulse)
+ * ──────────────────────────────────────────────────────────── */
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-purple);
+  vertical-align: 0.15em;
+  animation: breathe 3.6s var(--ease) infinite;
+  position: relative;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--brand-purple-glow),
+                0 0 18px rgba(139,92,246,0.65);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(139,92,246,0),
+                0 0 24px rgba(139,92,246,0.35);
+    opacity: 0.85;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Chapter cards (map) — bento
+ * ──────────────────────────────────────────────────────────── */
+
+.chapters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2em;
+  margin-top: 1.2em;
+}
+
+.chapters .chapter {
+  padding: 1.2em 1.4em;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid var(--edge);
+  border-radius: var(--r-lg);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.chapters .chapter .num {
+  font-family: var(--font-mono);
+  font-size: 0.62em;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+}
+.chapters .chapter .name {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.4em;
+  color: var(--fg);
+  line-height: 1.05;
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Terminal CTA block — inverted, full attention
+ * ──────────────────────────────────────────────────────────── */
+
+.terminal {
+  font-family: var(--font-mono);
+  background: linear-gradient(180deg, #0E0E14 0%, #050507 100%);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-lg);
+  padding: 1.4em 1.6em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 32px 64px -28px rgba(0,0,0,0.85);
+}
+.terminal .ps {
+  color: var(--success);
+  margin-right: 0.6em;
+  font-weight: 500;
+}
+.terminal .cmd {
+  color: var(--fg);
+  font-size: 1.1em;
+}
+.terminal .cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  background: var(--fg);
+  margin-left: 0.3em;
+  vertical-align: -0.18em;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Reveal chrome
+ * ──────────────────────────────────────────────────────────── */
+
+.reveal .controls { color: var(--muted); }
+.reveal .progress {
+  color: var(--brand-purple);
+  height: 2px;
+  background: rgba(255,255,255,0.04);
+}
+.reveal .slide-number {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  background: transparent;
+  font-size: 12px;
+}
+.reveal .notes { display: none; }
+
+/* ────────────────────────────────────────────────────────────
+ * Motion — heading rise on slide enter
+ * ──────────────────────────────────────────────────────────── */
+
+.reveal .slides > section.present h1,
+.reveal .slides > section.present h2,
+.reveal .slides > section.present .eyebrow,
+.reveal .slides > section.present > .lead {
+  animation: rise 520ms var(--ease) both;
+}
+.reveal .slides > section.present h2 { animation-delay: 60ms; }
+.reveal .slides > section.present .lead { animation-delay: 140ms; }
+
+@keyframes rise {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* ────────────────────────────────────────────────────────────
+ * Focus + reduced motion
+ * ──────────────────────────────────────────────────────────── */
+
+*:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .terminal .cursor { opacity: 1; }
+}
+
+/* ────────────────────────────────────────────────────────────
+ * highlight.js dark — tuned to brand
+ * ──────────────────────────────────────────────────────────── */
+
+.hljs { background: transparent !important; color: var(--fg) !important; }
+.hljs-keyword, .hljs-built_in, .hljs-type { color: #C4B5FD !important; }
+.hljs-string, .hljs-attr { color: #86EFAC !important; }
+.hljs-comment { color: var(--muted) !important; font-style: italic; }
+.hljs-number, .hljs-literal { color: #FCD34D !important; }
+.hljs-title, .hljs-function { color: #FAFAFA !important; }
+.hljs-meta, .hljs-section { color: #93C5FD !important; }

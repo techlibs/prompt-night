@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+.env
+.env.local
+.claude/local/
+
+# Speaker-only version (notes intact, never publish)
+deck/speaker.html
+docs/superpowers/specs/2026-05-18-prompt-night-speaker-notes.md

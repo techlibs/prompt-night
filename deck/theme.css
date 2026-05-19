@@ -1,0 +1,405 @@
+/* Shippit dark theme override for reveal.js
+ * Source: shippit-landing/.design/branding/shippit/patterns/STYLE.md
+ * Dark only. White on black. Purple only as 5px dot accent.
+ */
+
+:root {
+  --bg: #000000;
+  --fg: #FAFAFA;
+  --card: #0A0A0A;
+  --muted: #797980;
+  --muted-2: #8A8A8F;
+  --border: #1F1F1F;
+  --border-2: #27272E;
+  --accent: #8B5CF6;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+
+  --font-heading: "Instrument Serif", Georgia, serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", Consolas, monospace;
+}
+
+html, body, .reveal {
+  background: var(--bg) !important;
+  color: var(--fg);
+}
+
+.reveal {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  padding: 0 4vw;
+  height: 100%;
+}
+
+/* Headings — Instrument Serif italic, max 6 words per line */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fg);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 0.4em;
+}
+
+.reveal h1 { font-size: 5.2em; }
+.reveal h2 { font-size: 3.2em; }
+.reveal h3 { font-size: 2em; }
+.reveal h4 { font-size: 1.4em; }
+
+/* Body text */
+.reveal p {
+  color: var(--fg);
+  line-height: 1.4;
+  margin: 0 0 0.6em;
+}
+
+.reveal .muted, .reveal small {
+  color: var(--muted);
+  font-size: 0.7em;
+  letter-spacing: 0.01em;
+}
+
+.reveal .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 1.2em;
+}
+
+/* Links */
+.reveal a {
+  color: var(--fg);
+  border-bottom: 1px solid var(--border-2);
+  text-decoration: none;
+  transition: border-color 120ms;
+}
+.reveal a:hover { border-color: var(--fg); color: var(--fg); }
+
+/* Lists */
+.reveal ul, .reveal ol { margin-left: 1.1em; }
+.reveal li { margin: 0.3em 0; line-height: 1.4; }
+.reveal ul { list-style: none; padding: 0; }
+.reveal ul li::before {
+  content: "—";
+  color: var(--muted);
+  display: inline-block;
+  width: 1.4em;
+  margin-left: -1.4em;
+}
+
+/* Strong / em */
+.reveal strong { color: var(--fg); font-weight: 600; }
+.reveal em { font-family: var(--font-heading); font-style: italic; }
+
+/* Code */
+.reveal code {
+  font-family: var(--font-mono);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.06em 0.4em;
+  font-size: 0.78em;
+  color: var(--fg);
+}
+
+.reveal pre {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2em 1.4em;
+  font-size: 0.55em;
+  box-shadow: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 0.8em 0;
+}
+
+.reveal pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: block;
+  line-height: 1.6;
+  color: var(--fg);
+  overflow-x: auto;
+  max-height: none;
+}
+
+/* Tables — bento style */
+.reveal table {
+  font-size: 0.65em;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 0.6em 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.9em 1.1em;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.reveal table thead th {
+  font-family: var(--font-mono);
+  font-size: 0.78em;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid var(--border-2);
+  background: rgba(255,255,255,0.02);
+}
+
+.reveal table tbody tr:last-child td { border-bottom: none; }
+
+.reveal table td code {
+  font-size: 0.9em;
+}
+
+/* Title slide */
+.reveal section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+.reveal section.title h1 {
+  font-size: 6.4em;
+  line-height: 0.95;
+  margin: 0 0 0.4em;
+}
+
+/* Center slide variant */
+.reveal section.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* Two-col grid */
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4em;
+  align-items: start;
+  margin-top: 1em;
+}
+
+.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6em;
+}
+
+/* Card surface */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2em 1.4em;
+}
+
+.card h4 {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin-bottom: 0.6em;
+}
+
+/* Brand purple dot — the ONE allowed color accent */
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  margin-right: 0.6em;
+  vertical-align: 0.18em;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.9); }
+}
+
+/* Big numeric */
+.bignum {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 6em;
+  line-height: 1;
+  color: var(--fg);
+  letter-spacing: -0.03em;
+}
+
+.bignum-label {
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: 0.4em;
+}
+
+/* Hash chip — for contract addresses, URLs */
+.hash {
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  color: var(--muted-2);
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 0.2em 0.6em;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 0.2em 0;
+  word-break: break-all;
+}
+
+/* Pill */
+.pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.55em;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  padding: 0.4em 1em;
+  margin: 0 0.4em 0.4em 0;
+}
+
+.pill.solid {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+/* Map chapters list */
+.chapters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4em;
+  margin-top: 1.4em;
+}
+
+.chapters .chapter {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2em;
+  background: var(--card);
+}
+
+.chapters .chapter .num {
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+  color: var(--muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+}
+
+.chapters .chapter .name {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.3em;
+  color: var(--fg);
+  line-height: 1.1;
+}
+
+/* Diff blocks */
+.diff {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4em;
+}
+
+.diff .col h4 { margin-bottom: 0.4em; }
+.diff .bad { border-left: 3px solid var(--danger); padding-left: 1em; }
+.diff .good { border-left: 3px solid var(--success); padding-left: 1em; }
+
+/* DAG ascii diagram container */
+.dag {
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  color: var(--fg);
+  line-height: 1.5;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.6em;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Reveal controls + progress — subtle */
+.reveal .controls { color: var(--muted); }
+.reveal .progress { color: var(--fg); height: 2px; }
+.reveal .slide-number {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  background: transparent;
+}
+
+/* Speaker notes don't render in main view */
+.reveal .notes { display: none; }
+
+/* Footer marker — slide page number style */
+.footer {
+  position: absolute;
+  bottom: 2.4vh;
+  left: 4vw;
+  right: 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.5em;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* highlight.js dark override — tune to brand */
+.hljs { background: transparent !important; color: var(--fg) !important; }
+.hljs-keyword, .hljs-built_in, .hljs-type { color: #C4B5FD !important; }
+.hljs-string, .hljs-attr { color: #86EFAC !important; }
+.hljs-comment { color: var(--muted) !important; font-style: italic; }
+.hljs-number, .hljs-literal { color: #FCD34D !important; }
+.hljs-title, .hljs-function { color: #FAFAFA !important; }
+
+/* Print friendliness */
+@media print {
+  .reveal pre { box-shadow: none; }
+}
