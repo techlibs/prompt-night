@@ -22,7 +22,7 @@
       <!-- 00. INTRO — who's talking -->
       <section data-atmo="purple-deep" class="intro">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Who's talking · 20 min · Prompt Night n24</div>
+        <div class="eyebrow"><span class="dot"></span>Who's talking · 25 min · Prompt Night n24</div>
 
         <div class="intro-grid">
           <div>
@@ -65,6 +65,14 @@
           <span class="intro-tonight-label">Tonight</span>
           <span class="intro-tonight-stops">SDD<span class="sep">→</span>TDD<span class="sep">→</span>Skills<span class="sep">→</span>Multi-agent orchestration<span class="sep">→</span>Live bake-off</span>
         </div>
+
+        <ul class="intro-highlights">
+          <li><strong>Spec &amp; failing test</strong> — the guardrail AI can't fake</li>
+          <li><strong>Subagents + worktrees</strong> — 4 min, not 16</li>
+          <li><strong>Live bake-off</strong> — 4 frameworks, 1 prompt, 1 merges</li>
+          <li><strong>Skills + MCP</strong> — brain &amp; hands, same loop any IDE</li>
+          <li><strong>Receipts</strong> — tx hash, not a demo</li>
+        </ul>
       </section>
 
       <!-- 01. COLD OPEN — single line, no spoiler subhead -->
@@ -80,8 +88,8 @@
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Multi-agent workflows · any platform</div>
         <h1>One prompt in.<br><em>A team of agents out.<span class="pt">.</span></em></h1>
-        <p class="lead" style="margin-top:1.2em;font-size:1.15em;max-width:26ch;">You stopped typing code. <em>Stop typing prompts next.</em></p>
-        <p class="muted" style="margin-top:1.1em;font-size:0.95em;">Carlos Libardo &nbsp;·&nbsp; Shippit &nbsp;·&nbsp; 20 minutes &nbsp;·&nbsp; whatever CLI you brought.</p>
+        <p class="lead" style="margin-top:1.2em;font-size:1.15em;max-width:28ch;">AI took over the code. <em>Next: agents take over the prompting.</em></p>
+        <p class="muted" style="margin-top:1.1em;font-size:0.95em;">Carlos Libardo &nbsp;·&nbsp; Shippit &nbsp;·&nbsp; 25 minutes &nbsp;·&nbsp; works with any AI coding CLI.</p>
       </section>
 
       <!-- 03. SDD — live 3-way bake-off on playground analytics -->
@@ -89,7 +97,7 @@
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>SDD · 01 &nbsp;·&nbsp; live bake-off vs the rest</div>
         <h3>The spec <em>is the guardrail.<span class="pt">.</span></em></h3>
-        <p class="muted" style="font-size:0.76em;margin-top:0.2em;max-width:58em;"><strong>SDD</strong> — spec-driven development: write the contract first. What it does, inputs, outputs, acceptance criteria. <strong>TDD</strong> — failing test second, encoding that contract as an executable check. AI writes the code; spec and test keep it honest. <strong>Why it matters with AI:</strong> models fill ambiguity with confident guesses and ship bugs in the same tone as working code — the spec removes the ambiguity, the failing test is the objective gate. Same prompt, three modes, three worktrees.</p>
+        <p class="muted" style="font-size:0.78em;margin-top:0.2em;max-width:50em;"><strong>Same prompt. Three modes. Three worktrees.</strong> Models fill ambiguity with confident guesses — the spec removes it, the failing test pins it.</p>
 
         <div style="margin:0.7em auto 0.6em;max-width:38em;text-align:center;">
           <p class="muted" style="font-size:0.62em;text-transform:uppercase;letter-spacing:0.14em;margin:0 0 0.3em;">→ The prompt (identical for all three)</p>
@@ -126,7 +134,7 @@
           </div>
 
         </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:58em;"><strong>The surprise:</strong> SDD ran <strong>faster than execute</strong> (8 min vs 18). Discipline isn't slower — execute pays its tax mid-flight, in debug loops. <strong>AI builds the code; we build the guardrails</strong> — spec, failing test, skill. The frameworks you'll see in a few slides (Superpowers, GSD, OpenSpec, Spec Kit) are four dialects of the same idea.</p>
+        <p style="font-size:0.92em;margin-top:0.9em;max-width:58em;"><strong style="color:var(--accent);">8 min vs 18.</strong> Discipline shipped <em>faster</em> than execute. Execute pays its tax mid-flight — in debug loops.</p>
       </section>
 
       <!-- 04. TDD — receipt -->
@@ -297,7 +305,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
           </div>
           <div class="card glow">
             <h4>Context budget</h4>
-            <p><code>/compact</code> on long sessions. <code>MEMORY.md</code> for state worth keeping. New chat when the cache window slips past 5 minutes — token cost cliff, not a curve.</p>
+            <p><code>/compact</code> on long sessions. <code>CLAUDE.md</code> for state worth keeping. New chat when the cache window slips past 5 minutes — token cost cliff, not a curve.</p>
           </div>
           <div class="card glow">
             <h4>Token compression</h4>
@@ -305,82 +313,6 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
           </div>
         </div>
         <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:38em;">Cost is a knob, not a verdict. Tune the split, isolate the checkouts, compress the chatter — same output, fraction of the spend.</p>
-      </section>
-
-      <!-- 09. VLAD-COCKPIT — why I'm building it (WIP) -->
-      <section data-atmo="purple-deep">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 01 &nbsp;·&nbsp; <span style="color:var(--brand-purple);">work in progress</span></div>
-        <h3>Remove me as the<br><em>bottleneck.<span class="pt">.</span></em></h3>
-        <div class="cols" style="margin-top:0.6em;align-items:flex-start;">
-          <div>
-            <p style="font-size:0.98em;max-width:24em;">One person can only sit in front of one Claude Code session at a time. That's the ceiling.</p>
-            <p style="font-size:0.92em;margin-top:0.8em;max-width:24em;"><strong>vlad-cockpit</strong> is the orchestration layer I'm building on top of Claude Code — so many agents can work in parallel, in different repos, while I review instead of type.</p>
-            <p class="muted" style="font-size:0.78em;margin-top:0.8em;max-width:24em;">Still early. Rough edges everywhere. Sharing the direction, not the polish.</p>
-          </div>
-          <div class="card glow" style="max-width:22em;">
-            <h4>The shift</h4>
-            <ul style="font-size:0.82em;line-height:1.55;margin:0.4em 0 0;padding-left:1.1em;">
-              <li><strong>From:</strong> me typing prompts, one at a time</li>
-              <li><strong>To:</strong> me reviewing work from a fleet of agents</li>
-              <li><strong>Trigger:</strong> a schedule, a GitHub issue, a webhook — not me</li>
-              <li><strong>I unblock</strong> when something needs judgment. The rest runs.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- 10. VLAD-COCKPIT — what it gives you today (non-tech wins) -->
-      <section data-atmo="purple-deep">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 02 &nbsp;·&nbsp; <span style="color:var(--brand-purple);">what it gives you today</span></div>
-        <h3>Four wins, even <em>half-built.<span class="pt">.</span></em></h3>
-        <div class="cols-3" style="margin-top:0.4em;">
-          <div class="card glow">
-            <h4>One screen, every agent</h4>
-            <p>Every session in flight, on one page. Status, what it's working on, when it last moved. No tab-juggling, no "where did that one go".</p>
-          </div>
-          <div class="card glow">
-            <h4>Cost X-ray</h4>
-            <p>Spend per project, per model, per session. Find the leak before it bleeds. Decide which agents earn their keep.</p>
-          </div>
-          <div class="card glow">
-            <h4>Scheduled agents</h4>
-            <p>"Audit dependencies every Monday at 7am." Set it, walk away. Work happens whether I'm at the keyboard or not.</p>
-          </div>
-        </div>
-        <div class="card glow" style="margin-top:0.9em;max-width:38em;">
-          <h4>Phone-first access</h4>
-          <p style="font-size:0.86em;">Same cockpit on phone, laptop, tablet. Approve, take over, or walk away — from anywhere. Push notifications when an agent needs a human.</p>
-        </div>
-        <p class="muted" style="font-family:var(--font-mono);font-size:0.55em;text-transform:uppercase;letter-spacing:0.18em;margin-top:1em;">github.com/carloslibardo/vlad</p>
-      </section>
-
-      <!-- 11. VLAD-COCKPIT — product showcase (live screens) -->
-      <section data-atmo="purple-deep">
-        <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>vlad-cockpit · live · still WIP</div>
-        <h3 style="font-size:1.6em;">A dozen agents. <em>One pane of glass.<span class="pt">.</span></em></h3>
-        <div class="cols-3" style="margin-top:0.5em;align-items:flex-start;gap:1em;">
-          <div>
-            <img src="assets/thumbs/cockpit_01_sessions.png" alt="vlad-cockpit live sessions" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Every agent at a glance</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;">A dozen agents working in parallel — across different projects. One card each: what it's doing, how long it's been at it, how much it's spent.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">Triage takes 5 seconds, not 5 minutes. Tap a card to drop in.</p>
-          </div>
-          <div>
-            <img src="assets/thumbs/cockpit_02_costs.png" alt="vlad-cockpit cost breakdown" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Where the money went</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;">Spend broken down by project, model, and session — over the last 7 days. The big consumer, the cheap experiment, the runaway.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">No more "I think it cost about…". You see it. You decide.</p>
-          </div>
-          <div>
-            <img src="assets/thumbs/cockpit_03_cron.png" alt="vlad-cockpit cron scheduler" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Agents that fire themselves</p>
-            <p style="font-size:0.72em;line-height:1.4;margin:0;">Pick a project, a budget, a prompt, and a cadence — hourly, daily, weekly. The agent runs without me remembering to start it.</p>
-            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">Recurring work stops depending on my memory.</p>
-          </div>
-        </div>
       </section>
 
       <!-- 13. E2E — the only warm slide -->
@@ -464,72 +396,93 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Receipt · ipe-city · bake-off</div>
         <h3>Same product. Four runs.<br><em>One merged to main.<span class="pt">.</span></em></h3>
-        <table>
+        <table style="font-size:0.82em;">
           <thead>
-            <tr><th>Branch</th><th>Framework</th><th>Files</th><th>Tests</th><th>Rework</th><th>Outcome</th></tr>
+            <tr>
+              <th>Branch</th>
+              <th>Framework</th>
+              <th style="text-align:right;">Commits</th>
+              <th style="text-align:right;">Files</th>
+              <th style="text-align:right;">LOC</th>
+              <th style="text-align:right;">Tests</th>
+              <th style="text-align:right;">Coverage</th>
+              <th>Outcome</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
               <td><code>speckit</code></td>
               <td>Spec Kit</td>
-              <td>254</td>
-              <td>78 E2E</td>
-              <td>Medium</td>
-              <td>Deployed, <em>closed</em></td>
+              <td style="text-align:right;">35</td>
+              <td style="text-align:right;">254</td>
+              <td style="text-align:right;">29K</td>
+              <td style="text-align:right;">~280 <span class="muted">(78 E2E)</span></td>
+              <td style="text-align:right;" class="muted">n/a</td>
+              <td>Deployed · <em>closed</em></td>
             </tr>
             <tr>
               <td><code>full-vision-roadmap</code></td>
               <td>GSD</td>
-              <td>1,098</td>
-              <td>Full E2E suite</td>
-              <td>High <span class="muted">(181K LOC)</span></td>
-              <td>Deployed, <em>closed</em></td>
+              <td style="text-align:right;"><strong style="color:#F87171;">97</strong></td>
+              <td style="text-align:right;"><strong style="color:#F87171;">1,098</strong></td>
+              <td style="text-align:right;"><strong style="color:#F87171;">181K</strong></td>
+              <td style="text-align:right;">~1,500</td>
+              <td style="text-align:right;" class="muted">n/a</td>
+              <td>Deployed · <em>closed</em></td>
             </tr>
             <tr>
               <td><code>superpower</code></td>
               <td>Superpowers</td>
-              <td>987</td>
-              <td>BDD + API + Playwright</td>
-              <td>High <span class="muted">(197K LOC)</span></td>
-              <td>Deployed, <em>closed</em></td>
+              <td style="text-align:right;">66</td>
+              <td style="text-align:right;">987</td>
+              <td style="text-align:right;"><strong style="color:#F87171;">197K</strong></td>
+              <td style="text-align:right;">~1,440</td>
+              <td style="text-align:right;" class="muted">n/a</td>
+              <td>Deployed · <em>closed</em></td>
             </tr>
-            <tr style="background:rgba(34,197,94,0.12);">
+            <tr style="background:rgba(34,197,94,0.14);">
               <td><code>ralph-unified</code> <span style="color:#F59E0B;" title="Winner">★</span></td>
-              <td>Ralph Loop <span class="muted">(compile-best)</span></td>
-              <td><strong>117</strong></td>
-              <td><strong>570 @ 93.66% cov</strong></td>
-              <td>Low</td>
+              <td>Ralph Loop</td>
+              <td style="text-align:right;"><strong>17</strong></td>
+              <td style="text-align:right;"><strong>117</strong></td>
+              <td style="text-align:right;"><strong>13.8K</strong></td>
+              <td style="text-align:right;"><strong>570</strong></td>
+              <td style="text-align:right;"><strong style="color:#34D399;">93.66%</strong></td>
               <td><strong>Merged to <code>main</code></strong></td>
             </tr>
           </tbody>
         </table>
-        <p class="muted" style="font-size:0.72em;margin-top:0.7em;max-width:52em;">
-          <strong style="color:#F59E0B;">Ralph Loop</strong> (Geoffrey Huntley pattern) — <code>while true; do claude -p "@PROMPT.md"; done</code>. Same prompt fed back at agent until criteria met. Used here to <strong>review all three branches and compile the best of each</strong> into one clean codebase. <span class="muted">Honest receipt: crashed mid-loop multiple times, needed manual re-runs and restarts — but the resulting 13.8K-line merge with 93.66% coverage was the only branch I trusted on <code>main</code>.</span>
-        </p>
+        <div class="cols" style="margin-top:0.7em;gap:1.6em;">
+          <div>
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.18em;margin:0 0 0.4em;">Read the numbers</p>
+            <p style="font-size:0.72em;line-height:1.45;margin:0;max-width:30em;">
+              <strong style="color:#F87171;">GSD</strong> &amp; <strong style="color:#F87171;">Superpowers</strong> generated <strong>13&times;–14&times;</strong> the code of the winner (181K &amp; 197K LOC). Both deployed; neither merged. <strong>Spec Kit</strong> stayed compact (29K) but lighter on tests. <strong style="color:#34D399;">Ralph-unified</strong> shipped <strong>13.8K LOC</strong>, <strong>570 tests</strong>, and the only <strong>measured coverage</strong> (93.66%) — merged to <code>main</code>.
+            </p>
+          </div>
+          <div>
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.18em;margin:0 0 0.4em;">Ralph Loop</p>
+            <p style="font-size:0.72em;line-height:1.45;margin:0;max-width:30em;">
+              Huntley pattern: <code>while :; do claude -p "@PROMPT.md"; done</code>. Same prompt re-fed until criteria met. Used here to <strong>review the three branches and compile the best of each</strong>. <span class="muted">Honest receipt: crashed mid-loop many times, needed manual restarts — but the only branch I trusted on <code>main</code>.</span>
+            </p>
+          </div>
+        </div>
       </section>
 
       <!-- 15. IPE-CITY — on-chain receipts -->
       <section data-atmo="blue-navy">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Receipt · base mainnet</div>
-        <h3>Built. Audited.<br><em>Deployed.<span class="pt">.</span></em></h3>
-        <div class="cols">
-          <div>
-            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.62em;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:0.6em;">Contracts — identical on sepolia</p>
-            <div class="hash">IdentityRegistry &nbsp;0xDf1e…7B6a</div>
-            <div class="hash">EvaluationRegistry &nbsp;0xa86D…28d8</div>
-            <div class="hash">ReputationRegistry &nbsp;0x0DB2…FB1f</div>
-            <div class="hash">ValidationRegistry &nbsp;0x5A0B…3f17</div>
-            <div class="hash">MilestoneManager &nbsp;0xb416…536b</div>
-            <div class="hash">DisputeRegistry &nbsp;0x78f8…2b0e</div>
-            <p class="muted" style="font-size:0.7em;margin-top:0.8em;max-width:24em;">Solidity 0.8.24, Foundry. Audit toolkit ran inside the agent loop: solidity-security · gas-optimization · secrets-scanner · dependency-supply-chain.</p>
-          </div>
-          <div style="display:flex;gap:1.6em;flex-wrap:wrap;align-items:flex-end;">
-            <div><div class="bignum" style="font-size:4.4em;">6</div><div class="bignum-label" style="margin-top:0.1em;">contracts shipped</div></div>
-            <div><div class="bignum" style="font-size:4.4em;">3</div><div class="bignum-label" style="margin-top:0.1em;">live frontends</div></div>
-            <div><div class="bignum" style="font-size:4.4em;">1</div><div class="bignum-label" style="margin-top:0.1em;">spec · three runtimes</div></div>
-          </div>
+        <div class="eyebrow"><span class="dot"></span>Receipt · ipe-city audit loop</div>
+        <h3>The agent <em>audited its own contracts.<span class="pt">.</span></em></h3>
+        <div style="display:flex;gap:0.9em;flex-wrap:wrap;margin-top:0.6em;">
+          <div class="hash" style="font-size:0.9em;">solidity-security</div>
+          <div class="hash" style="font-size:0.9em;">gas-optimization</div>
+          <div class="hash" style="font-size:0.9em;">secrets-scanner</div>
+          <div class="hash" style="font-size:0.9em;">dependency-supply-chain</div>
         </div>
+        <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.62em;text-transform:uppercase;letter-spacing:0.18em;margin:0.9em 0 0.3em;">Same agent. Same loop. 4 audit skills, run on every PR.</p>
+        <p style="font-size:0.82em;line-height:1.45;margin:0.6em 0 0;max-width:42em;">
+          <strong>6 contracts</strong> shipped to <strong>Base</strong>. Identical bytecode on Sepolia. Audit findings fixed before merge — Solidity 0.8.24, Foundry.
+        </p>
       </section>
 
       <!-- 16. IPE-CITY — product showcase (live screens, canonical) -->
@@ -566,7 +519,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
           <div>
             <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.62em;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:0.6em;">Stack — boring on purpose</p>
             <div class="hash">Bun monorepo · Convex · Expo web</div>
-            <div class="hash">Mastra agents · gpt-5.4</div>
+            <div class="hash">Mastra agents · gpt-5</div>
             <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:30em;">Team LinkedIn outreach. Each teammate's account, their voice — agents research leads, write the message, time the follow-up.</p>
             <p class="muted" style="font-size:0.78em;margin-top:0.6em;max-width:30em;">Spec first. Failing test second. Agent third. Sleep fourth.</p>
           </div>
@@ -618,7 +571,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
               <li><strong>How:</strong> skills + <code>STYLE.md</code> + tokens gate every PR</li>
               <li>Banned-words filter, token diff in PR body</li>
               <li>Generative: deck, site, app compile from one contract</li>
-              <li>OSS · <code>jubscodes/get-shit-pretty</code></li>
+              <li>OSS · <a href="https://github.com/jubscodes/get-shit-pretty" target="_blank" rel="noopener"><code>jubscodes/get-shit-pretty</code></a> · <a href="https://gsp.jubs.studio" target="_blank" rel="noopener">gsp.jubs.studio</a></li>
             </ul>
           </div>
           <div class="card glow">
@@ -628,7 +581,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
               <li><strong>How:</strong> Tailwind v4 tokens + dark-first React components</li>
               <li>Production-tested by the Claude Code team</li>
               <li>Fork, repaint with your own token layer (e.g. /gsp)</li>
-              <li><code>anthropic.com/news/claude-design</code></li>
+              <li><a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener"><code>anthropic.com/news/claude-design</code></a></li>
             </ul>
           </div>
           <div class="card glow">
@@ -638,7 +591,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
               <li><strong>How:</strong> agent calls <code>get_code</code> / <code>get_image</code> on a selection</li>
               <li>Variables → CSS tokens, auto-layout → flex / grid</li>
               <li>Pixel-true handoff without screenshot prompts</li>
-              <li><code>figma.com/dev-mode-mcp</code></li>
+              <li><a href="https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server" target="_blank" rel="noopener"><code>figma.com/dev-mode-mcp</code></a></li>
             </ul>
           </div>
         </div>
@@ -658,55 +611,87 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
       <section data-atmo="slate-steel">
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Honest notes</div>
-        <h3>What broke.<br><em>What stuck.<span class="pt">.</span></em></h3>
+        <h3>Scar tissue.<br><em>Rules now.<span class="pt">.</span></em></h3>
         <div class="cols">
           <div class="card" style="border-left:2px solid var(--danger);">
-            <h4 style="color:var(--danger);">Broke</h4>
+            <h4 style="color:var(--danger);">Scar tissue</h4>
             <ul>
-              <li>Vibes-first led to the agent deleting its own tests.</li>
-              <li>Vague skill descriptions → never invoked.</li>
-              <li>Parallel agents stomping shared files. Worktrees fixed it.</li>
-              <li>On-chain test cost &gt; CI budget until we mocked the RPC layer.</li>
+              <li>Vibes-first: agent deleted failing tests to turn the suite green.</li>
+              <li>Skill descriptions like <em>"helps with code"</em> — never fired. Trigger words matter.</li>
+              <li>Parallel agents on one branch — lost commits. No worktree, no parallelism.</li>
+              <li>Long-running plans drifted — agent worked from a stale spec.</li>
             </ul>
           </div>
           <div class="card" style="border-left:2px solid var(--success);">
-            <h4 style="color:var(--success);">Stuck</h4>
+            <h4 style="color:var(--success);">Rules now</h4>
             <ul>
-              <li>Atomic commits with the AC in the message.</li>
-              <li>Specs in markdown, next to code.</li>
-              <li>Verification skill gates every "done" claim.</li>
-              <li>One conductor owns dispatch — never the model picking ad-hoc.</li>
+              <li>One commit, one AC. PR body writes itself.</li>
+              <li>Specs live in the repo. Markdown, diffable, next to code.</li>
+              <li>"Done" needs proof — verification skill or it didn't happen.</li>
+              <li>One conductor dispatches. Model never picks its own next move.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- 23. SKILL CREATOR — anatomy of a skill -->
-      <section data-atmo="teal-dark">
+      <!-- 23A. SKILLS vs CLAUDE.md/AGENTS.md + self-learning loop -->
+      <section data-atmo="slate-steel">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Anatomy lesson · skill-creator</div>
-        <h3>Skills are markdown.<br><em>Anyone can write one.<span class="pt">.</span></em></h3>
+        <div class="eyebrow"><span class="dot"></span>Two surfaces · always-on vs on-demand</div>
+        <h3>Skills load lazy.<br><em>CLAUDE.md is always there.<span class="pt">.</span></em></h3>
         <div class="cols">
           <div class="card glow">
-            <h4>Where skills travel</h4>
-            <p>Same markdown file runs on Claude Code, Cursor, Codex, Windsurf, Gemini CLI. The frontmatter is the index every agent reads; the body is the prompt every agent executes.</p>
+            <h4>Static prompt — <code>CLAUDE.md</code> / <code>AGENTS.md</code></h4>
+            <p>Loaded once at session start. Always in context. Costs tokens every turn. Use for rules that apply <em>always</em>: stack, conventions, hard constraints, identity.</p>
             <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li>Same shape as Cursor rules, Codex <code>AGENTS.md</code></li>
-              <li>Skill written for one CLI ships on all of them</li>
-              <li>Anthropic's catalog is <a href="https://github.com/anthropics/skills"><code>anthropics/skills</code></a> — MIT, fork-friendly</li>
+              <li>Project root → every session reads it</li>
+              <li>Bloat = context tax on every reply</li>
+              <li>Keep tight: who you are, what not to do</li>
             </ul>
           </div>
           <div class="card glow">
-            <h4>How you write one</h4>
-            <p>Invoke <code>skill-creator</code>. Describe the trigger in plain English. Paste reference docs. Agent scaffolds the folder, fills the frontmatter, writes the body.</p>
+            <h4>Dynamic capability — Skills</h4>
+            <p>Frontmatter (<code>name</code> + <code>description</code>) sits in a one-line index. Body only loads when the description matches the task — or you type <code>/skill-name</code>.</p>
             <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li>One prompt → committable skill in your repo</li>
-              <li>Skill that writes skills — recursion is the point</li>
-              <li>Anthropic's public catalog: <a href="https://github.com/anthropics/skills">github.com/anthropics/skills</a></li>
+              <li>200+ skills can sit dormant, ~0 cost</li>
+              <li>Agent reads YAML → decides → loads <code>SKILL.md</code></li>
+              <li><code>references/</code> = even lazier (loaded only if body says so)</li>
+              <li>Docs: <a href="https://code.claude.com/docs/en/skills"><code>code.claude.com/docs/en/skills</code></a></li>
             </ul>
           </div>
         </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:42em;">Every link on the next slides is a skill you can drop into your repo and commit by tonight.</p>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:46em;">Progressive disclosure. Static prompt = identity. Skills = procedures the agent fetches when it needs them.</p>
+      </section>
+
+      <!-- 23A2. SELF-LEARNING LOOP -->
+      <section data-atmo="green-forest">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Self-learning · the recursion</div>
+        <h3>Correct it once.<br><em>It stops happening.<span class="pt">.</span></em></h3>
+        <div class="cols">
+          <div class="card glow">
+            <h4>The loop</h4>
+            <p>A <code>self-improvement</code> skill watches for corrections. Classifies them. Writes the lesson to the right file — silently. Next session reads it back.</p>
+            <ul style="font-size:0.78em;margin-top:0.5em;">
+              <li><strong>Reactive</strong> — user corrects → log lesson</li>
+              <li><strong>Proactive</strong> — session start → read lessons → apply</li>
+              <li><strong>Analytical</strong> — "what did you learn" → review + table</li>
+            </ul>
+          </div>
+          <div class="card glow">
+            <h4>Triage — where the lesson lands</h4>
+            <table style="font-size:0.74em;width:100%;border-collapse:collapse;margin-top:0.4em;">
+              <thead><tr><th style="text-align:left;padding:0.2em 0.4em;">File</th><th style="text-align:left;padding:0.2em 0.4em;">For</th></tr></thead>
+              <tbody>
+                <tr><td style="padding:0.2em 0.4em;"><code>.self-improvement/lessons.md</code></td><td style="padding:0.2em 0.4em;">project-specific mistakes</td></tr>
+                <tr><td style="padding:0.2em 0.4em;"><code>KNOWLEDGE.md</code></td><td style="padding:0.2em 0.4em;">cross-project platform gotchas</td></tr>
+                <tr><td style="padding:0.2em 0.4em;"><code>CLAUDE.md</code></td><td style="padding:0.2em 0.4em;">permanent rules / conventions</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.76em;margin-top:0.6em;"><em>Real example:</em> Oracle on Apple Silicon needs Colima, not Docker Desktop. Captured once in <code>KNOWLEDGE.md</code> → every future session avoids the 2-hour rabbit hole.</p>
+          </div>
+        </div>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:46em;">Skills that update memory. Memory that feeds skills. Agent gets sharper per session — not per training run.</p>
       </section>
 
       <!-- 23B. SKILLS BEYOND THE CLI — vibe-code platforms -->
@@ -739,6 +724,34 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
         <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:52em;"><strong>Bolt.new / v0 / Volt</strong> — no native skill registry yet, but <code>AGENTS.md</code> at repo root works as the global system-prompt slot. The spec is converging: <a href="https://sourcetoad.com/using-agents-md-in-replit-or-lovable/">one <code>AGENTS.md</code></a> + a <code>skills/</code> folder is becoming the lowest common denominator across CLIs and vibe-code IDEs.</p>
       </section>
 
+      <!-- 23C. MCP + API KEYS + /chrome — agents plug into everything -->
+      <section data-atmo="warm-ember">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Wiring · MCP · API keys · <code>/chrome</code></div>
+        <h3>Skills are the brain.<br><em>MCP is the hands.<span class="pt">.</span></em></h3>
+        <div class="cols">
+          <div class="card glow">
+            <h4>MCP — one protocol, every SaaS</h4>
+            <p>Model Context Protocol exposes any tool (Gmail, Slack, Drive, Linear, GitHub, Notion, Figma, Stripe, Postgres) as typed actions the agent can call. Install once, every skill can use it.</p>
+            <ul style="font-size:0.78em;margin-top:0.5em;">
+              <li>Public registry · <a href="https://github.com/modelcontextprotocol/servers"><code>modelcontextprotocol/servers</code></a></li>
+              <li>Same server runs on Claude Code, Cursor, Codex, Windsurf</li>
+              <li>No SDK glue — agent sees the tool, calls it, ships</li>
+            </ul>
+          </div>
+          <div class="card glow">
+            <h4>API keys + <code>/chrome</code> — the escape hatch</h4>
+            <p>No MCP server yet? Drop the API key in <code>.env</code>, skill calls the REST endpoint. Still no API? <code>/chrome</code> MCP drives a real browser — clicks, types, scrapes, screenshots.</p>
+            <ul style="font-size:0.78em;margin-top:0.5em;">
+              <li><code>claude-in-chrome</code> · agent operates Chrome end-to-end</li>
+              <li>Reads console, network, DOM — closes the loop on any web app</li>
+              <li>If a human can do it in a browser, the agent can too</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:52em;">Translation: <strong>your agent connects to literally everything.</strong> Native MCP first, REST with a key second, browser-driving third. Three rungs, zero dead ends.</p>
+      </section>
+
       <!-- 24. WEB3 SHELF -->
       <section data-atmo="green-forest">
         <div class="grain"></div>
@@ -766,52 +779,71 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
               <td>Agent → onchain actions · any framework</td>
             </tr>
             <tr>
-              <td><code>bwb-tokenization/.claude/skills/*</code></td>
-              <td><code>solidity-auditor</code> · <code>token-integration-analyzer</code></td>
+              <td><a href="https://github.com/trailofbits/skills"><code>trailofbits/skills</code></a></td>
+              <td>Trail of Bits audit shelf · vulnerability detection + workflows</td>
             </tr>
             <tr>
-              <td><span class="muted">↳ same shelf</span></td>
-              <td><code>dos-griefing</code> · <code>external-call-safety</code> · <code>signature-replay</code> · <code>input-arithmetic</code></td>
+              <td><a href="https://github.com/auditmos/skills"><code>auditmos/skills</code></a></td>
+              <td><code>audit-signature</code> · <code>audit-liquidation-dos</code> · <code>audit-external-call</code> · <code>audit-arithmetic</code></td>
             </tr>
           </tbody>
         </table>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:48em;">These are the skills we used to audit ipê-city. Real findings, MIT-licensable patterns. Drop the folder in, the agent reads the shelf, ABI hallucinations stop.</p>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:48em;">Same shape as the shelf we used to audit ipê-city. Drop the folder in, the agent reads the skills, ABI hallucinations stop.</p>
       </section>
 
-      <!-- 25. ORCHESTRATION + DESIGN SHELF -->
+      <!-- 25. ORCHESTRATION FRAMEWORKS -->
       <section data-atmo="warm-ember">
         <div class="grain"></div>
         <div class="eyebrow"><span class="dot"></span>Swap the dialect · keep the pattern</div>
         <h3>Same loop.<br><em>Different paint.<span class="pt">.</span></em></h3>
-        <div class="cols">
-          <div class="card glow">
-            <h4>Orchestration alternative</h4>
-            <p><a href="https://mastra.ai"><code>mastra.ai</code></a> — TS-first agent framework. Alternative to vlad-cockpit / Claude Agent SDK when the conductor lives in Node, not CLI.</p>
-            <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li>Agents, workflows, evals, memory — one stack</li>
-              <li>Vercel/Next-native deploys</li>
-              <li>Bring-your-own model · OpenAI, Anthropic, local</li>
-            </ul>
-          </div>
-          <div class="card glow">
-            <h4>Design bridge</h4>
-            <p><a href="https://www.figma.com/blog/introducing-figmas-dev-mode-mcp-server/"><code>figma · dev-mode-mcp</code></a> — Figma file → component code via MCP. Bridges <code>/gsp</code> brand contract to the designer-owned source of truth.</p>
-            <ul style="font-size:0.78em;margin-top:0.5em;">
-              <li>Selection → code in the same editor session</li>
-              <li>Variables, tokens, components — all readable</li>
-              <li>Closes the designer ↔ code loop without re-typing</li>
-            </ul>
-          </div>
-        </div>
-        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:48em;">Orchestration is a slot. Design is a slot. Pick the dialect that matches your runtime — the loop underneath is the one we walked through tonight.</p>
+        <table style="margin-top:0.4em;font-size:0.82em;">
+          <thead>
+            <tr><th>Framework</th><th>Sweet spot</th><th>Tradeoff</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://docs.claude.com/en/api/agent-sdk/overview"><code>Claude Agent SDK</code></a> <span class="muted">· direct</span></td>
+              <td>Thin layer over the model · max control · ships with Claude Code primitives</td>
+              <td>You wire orchestration · no batteries</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.langchain.com/langgraph"><code>LangChain / LangGraph</code></a></td>
+              <td>Biggest ecosystem · graph-based control flow · every provider</td>
+              <td>Heavy abstraction · churny API</td>
+            </tr>
+            <tr>
+              <td><a href="https://mastra.ai"><code>mastra.ai</code></a></td>
+              <td>TS-first · agents + workflows + evals + memory in one stack · Vercel-native</td>
+              <td>Young · Node-only</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.crewai.com"><code>CrewAI</code></a></td>
+              <td>Role-based crews · fastest path to multi-agent demo · Python</td>
+              <td>Less control · opinionated</td>
+            </tr>
+            <tr>
+              <td><a href="https://agno.com"><code>Agno</code></a></td>
+              <td>Python · multimodal-first · perf-tuned · lean runtime</td>
+              <td>Smaller community</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="muted" style="font-size:0.78em;margin-top:0.9em;max-width:52em;">Orchestration is a slot. Pick the dialect that matches your runtime — the loop underneath is the one we walked through tonight.</p>
       </section>
 
-      <!-- 26. RECEIPTS — frameworks recap + startkit closer -->
+      <!-- 26. RECEIPTS — pillars + frameworks recap + startkit closer -->
       <section data-atmo="slate-steel">
         <div class="grain"></div>
-        <div class="eyebrow"><span class="dot"></span>Receipts · all the links</div>
+        <div class="eyebrow"><span class="dot"></span>Receipts · pillars + all the links</div>
         <h3>Steal everything.<br><em>Then ask AI for more.<span class="pt">.</span></em></h3>
-        <table style="margin-top:0.4em;font-size:0.86em;">
+        <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.56em;text-transform:uppercase;letter-spacing:0.18em;margin:0.3em 0 0.4em;">The pillars · disciplines underneath the dialects</p>
+        <div class="cols-3" style="margin:0 0 0.6em;gap:0.7em;">
+          <div class="card" style="padding:0.55em 0.7em;"><strong>SDD</strong> · spec first. The contract is the guardrail.</div>
+          <div class="card" style="padding:0.55em 0.7em;"><strong>TDD</strong> · failing test second. Red proves the prompt was understood.</div>
+          <div class="card" style="padding:0.55em 0.7em;"><strong>Clean Arch</strong> · boundaries the agent can't accidentally cross.</div>
+          <div class="card" style="padding:0.55em 0.7em;"><strong>SOLID</strong> · small surfaces, swap-friendly. AI edits one thing at a time.</div>
+        </div>
+        <table style="margin-top:0.2em;font-size:0.84em;">
           <thead>
             <tr><th>Framework / skill</th><th>Where to get it</th></tr>
           </thead>
@@ -826,7 +858,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
             </tr>
             <tr>
               <td><strong>GSD</strong></td>
-              <td><a href="https://github.com/gsd-build/gsd-1"><code>github.com/gsd-build/gsd-1</code></a> · <code>npx gsd-pi</code></td>
+              <td><a href="https://github.com/gsd-build/get-shit-done"><code>gsd-build/get-shit-done</code></a> · <a href="https://github.com/gsd-build/gsd-2"><code>gsd-2</code></a> · <a href="https://github.com/gsd-build/gsd-1"><code>gsd-1</code></a> · <code>npx gsd-pi</code></td>
             </tr>
             <tr>
               <td><strong>OpenSpec</strong></td>
@@ -834,7 +866,7 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
             </tr>
             <tr>
               <td><strong>/gsp</strong> — get shit pretty</td>
-              <td><code>npx get-shit-pretty</code></td>
+              <td><a href="https://github.com/jubscodes/get-shit-pretty"><code>jubscodes/get-shit-pretty</code></a> · <a href="https://gsp.jubs.studio">gsp.jubs.studio</a> · <code>npx get-shit-pretty</code></td>
             </tr>
             <tr>
               <td><strong>Simply Shippit</strong></td>
@@ -844,6 +876,82 @@ git worktree add ../agent-c feature/yolo-mode</code></pre>
         </table>
         <p class="lead" style="margin-top:1.1em;font-size:1.05em;max-width:32ch;"><em>This is a startkit.</em></p>
         <p class="muted" style="font-size:0.84em;margin-top:0.4em;max-width:48em;">Anything not on this slide — your agent can find a fitter alternative in one prompt. The shelf is infinite. Ask for the skill that matches <em>your</em> stack.</p>
+      </section>
+
+      <!-- 26c. VLAD-COCKPIT — why I'm building it (WIP) -->
+      <section data-atmo="purple-deep">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 01 &nbsp;·&nbsp; <span style="color:var(--brand-purple);">work in progress</span></div>
+        <h3>Remove me as the<br><em>bottleneck.<span class="pt">.</span></em></h3>
+        <div class="cols" style="margin-top:0.6em;align-items:flex-start;">
+          <div>
+            <p style="font-size:0.98em;max-width:24em;">One person can only sit in front of one Claude Code session at a time. That's the ceiling.</p>
+            <p style="font-size:0.92em;margin-top:0.8em;max-width:24em;"><strong>vlad-cockpit</strong> is the orchestration layer I'm building on top of Claude Code — so many agents can work in parallel, in different repos, while I review instead of type.</p>
+            <p class="muted" style="font-size:0.78em;margin-top:0.8em;max-width:24em;">Still early. Rough edges everywhere. Sharing the direction, not the polish.</p>
+          </div>
+          <div class="card glow" style="max-width:22em;">
+            <h4>The shift</h4>
+            <ul style="font-size:0.82em;line-height:1.55;margin:0.4em 0 0;padding-left:1.1em;">
+              <li><strong>From:</strong> me typing prompts, one at a time</li>
+              <li><strong>To:</strong> me reviewing work from a fleet of agents</li>
+              <li><strong>Trigger:</strong> a schedule, a GitHub issue, a webhook — not me</li>
+              <li><strong>I unblock</strong> when something needs judgment. The rest runs.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 26d. VLAD-COCKPIT — what it gives you today (non-tech wins) -->
+      <section data-atmo="purple-deep">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>Real-world orchestration · 02 &nbsp;·&nbsp; <span style="color:var(--brand-purple);">what it gives you today</span></div>
+        <h3>Four wins, even <em>half-built.<span class="pt">.</span></em></h3>
+        <div class="cols-3" style="margin-top:0.4em;">
+          <div class="card glow">
+            <h4>One screen, every agent</h4>
+            <p>Every session in flight, on one page. Status, what it's working on, when it last moved. No tab-juggling, no "where did that one go".</p>
+          </div>
+          <div class="card glow">
+            <h4>Cost X-ray</h4>
+            <p>Spend per project, per model, per session. Find the leak before it bleeds. Decide which agents earn their keep.</p>
+          </div>
+          <div class="card glow">
+            <h4>Scheduled agents</h4>
+            <p>"Audit dependencies every Monday at 7am." Set it, walk away. Work happens whether I'm at the keyboard or not.</p>
+          </div>
+        </div>
+        <div class="card glow" style="margin-top:0.9em;max-width:38em;">
+          <h4>Phone-first access</h4>
+          <p style="font-size:0.86em;">Same cockpit on phone, laptop, tablet. Approve, take over, or walk away — from anywhere. Push notifications when an agent needs a human.</p>
+        </div>
+        <p class="muted" style="font-family:var(--font-mono);font-size:0.55em;text-transform:uppercase;letter-spacing:0.18em;margin-top:1em;"><a href="https://github.com/carloslibardo/vlad">github.com/carloslibardo/vlad</a></p>
+      </section>
+
+      <!-- 26e. VLAD-COCKPIT — product showcase (live screens) -->
+      <section data-atmo="purple-deep">
+        <div class="grain"></div>
+        <div class="eyebrow"><span class="dot"></span>vlad-cockpit · live · still WIP</div>
+        <h3 style="font-size:1.6em;">A dozen agents. <em>One pane of glass.<span class="pt">.</span></em></h3>
+        <div class="cols-3" style="margin-top:0.5em;align-items:flex-start;gap:1em;">
+          <div>
+            <img src="assets/thumbs/cockpit_01_sessions.png" alt="vlad-cockpit live sessions" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Every agent at a glance</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;">A dozen agents working in parallel — across different projects. One card each: what it's doing, how long it's been at it, how much it's spent.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">Triage takes 5 seconds, not 5 minutes. Tap a card to drop in.</p>
+          </div>
+          <div>
+            <img src="assets/thumbs/cockpit_02_costs.png" alt="vlad-cockpit cost breakdown" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Where the money went</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;">Spend broken down by project, model, and session — over the last 7 days. The big consumer, the cheap experiment, the runaway.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">No more "I think it cost about…". You see it. You decide.</p>
+          </div>
+          <div>
+            <img src="assets/thumbs/cockpit_03_cron.png" alt="vlad-cockpit cron scheduler" style="width:100%;border-radius:8px;border:1px solid var(--border);box-shadow:0 12px 32px rgba(0,0,0,0.6);" />
+            <p class="muted" style="font-family:var(--font-eyebrow);font-weight:500;font-size:0.58em;text-transform:uppercase;letter-spacing:0.14em;margin:0.6em 0 0.2em;">Agents that fire themselves</p>
+            <p style="font-size:0.72em;line-height:1.4;margin:0;">Pick a project, a budget, a prompt, and a cadence — hourly, daily, weekly. The agent runs without me remembering to start it.</p>
+            <p class="muted" style="font-size:0.66em;line-height:1.35;margin-top:0.4em;">Recurring work stops depending on my memory.</p>
+          </div>
+        </div>
       </section>
 
       <!-- 26b. SIMPLY SHIPPIT — coming soon (moved next to CTA) -->
